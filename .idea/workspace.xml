@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sql-nakaa.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/IExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/Insert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/Select.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/Create.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/CreateBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/CreateRelation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/CreateSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateBaseBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateRelationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateSequenceBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/create/createFactory/ICreateBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/Drop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/DropBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/DropRelation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/DropSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropBaseBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropRelationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropSequenceBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/IDropBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/composants/Base.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/composants/RelationnalModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/composants/Sequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/composants/relations/Attribut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/composants/relations/Relation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/composants/relations/RelationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exe/Affichage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exe/Interpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exe/Sql_nakaa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/Funct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/ILoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/ISaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/IVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/savers/RelationSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/verifier/BaseVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/verifier/SequenceVerifier.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2Z4itwCYrmvw3f2sGrVqe1guiRU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/src/Main.java&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="exe" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Sql-nakaa" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="" />
+      <created>1701687974668</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701687974668</updated>
+      <workItem from="1701687975748" duration="4523000" />
+      <workItem from="1701798372641" duration="141000" />
+      <workItem from="1702109757329" duration="1792000" />
+      <workItem from="1702117752290" duration="13346000" />
+      <workItem from="1702174680489" duration="2931000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

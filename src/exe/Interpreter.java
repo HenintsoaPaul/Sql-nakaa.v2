@@ -1,9 +1,9 @@
 package exe;
 
+import commands.executors.select.Select;
 import commands.executors.create.Create;
 import commands.executors.drop.Drop;
-import commands.executors.Insert;
-import commands.executors.Select;
+import commands.executors.insert.Insert;
 import tools.verifier.BaseVerifier;
 
 import java.lang.reflect.InvocationTargetException;
@@ -99,8 +99,7 @@ public class Interpreter {
 
         try {
             Class<?> executorClass = getExecutorName(commands[0]);
-            // debug
-            System.out.println(executorClass);
+
             Object caller = executorClass.newInstance();
 
             Class[] params = new Class[2];

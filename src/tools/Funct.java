@@ -1,11 +1,9 @@
 package tools;
 
+import composants.relations.Relation;
 import exe.Sql_nakaa;
 
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.Vector;
 
 public class Funct {
 
@@ -59,5 +57,22 @@ public class Funct {
         int index = 0;
         while ( !commands[index].equalsIgnoreCase(where) ) index ++;
         return commands[ index+1 ];
+    }
+
+
+    // Vectors
+    public static boolean isInVectorOfVector(Vector<Vector> vectVect, Vector elmt ) {
+        for ( Vector v: vectVect )
+            if ( Relation.isLignesIdentiques( v, elmt ) )
+                return true;
+        return false;
+    }
+    public static Vector<Vector> unionSansRepetition(Vector<Vector> data1, Vector<Vector> data2 ) {
+        Vector<Vector> results = new Vector( data1 );
+        for ( Vector ligne: data2 ) {
+            if ( !isInVectorOfVector( results, ligne ) )
+                results.add( ligne );
+        }
+        return results;
     }
 }

@@ -1,6 +1,6 @@
 package composants.relations;
 
-import composants.RelationnalModel;
+import composants.RelationalModel;
 import tools.Funct;
 
 import java.io.Serializable;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Vector;
 
 @SuppressWarnings("rawtypes")
-public class Relation implements Serializable, RelationnalModel {
+public class Relation implements Serializable, RelationalModel {
 
     private static final long serialVersionUID = 11l;
     String nomRelation;
@@ -323,7 +323,7 @@ public class Relation implements Serializable, RelationnalModel {
 
         // ajout des tout les lignes de deux relations
         Vector<Vector> li = new Vector( this.getLignes() );
-        for ( Vector otherLine: rel.getLignes() ) li.add( otherLine );
+        li.addAll(rel.getLignes());
         result.setLignes( li );
 
         return result;

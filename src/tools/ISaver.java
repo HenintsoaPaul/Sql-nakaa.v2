@@ -1,12 +1,12 @@
 package tools;
 
-import composants.RelationnalModel;
+import composants.RelationalModel;
 import exe.Interpreter;
 
 import java.io.IOException;
 
 public interface ISaver {
 
-     void save(RelationnalModel relationnalModel, Interpreter interpreter)
+     void save(RelationalModel relationalModel, Interpreter interpreter)
             throws IOException;
 }

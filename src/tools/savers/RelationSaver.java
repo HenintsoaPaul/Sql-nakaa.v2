@@ -1,6 +1,6 @@
 package tools.savers;
 
-import composants.RelationnalModel;
+import composants.RelationalModel;
 import composants.relations.Relation;
 import exe.Interpreter;
 import tools.ISaver;
@@ -39,7 +39,7 @@ public class RelationSaver implements ISaver {
 
 
     @Override
-    public void save(RelationnalModel relation, Interpreter interpreter)
+    public void save(RelationalModel relation, Interpreter interpreter)
             throws IOException {
 
         saveRelation((Relation) relation, interpreter);

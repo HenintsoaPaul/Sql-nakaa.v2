@@ -1,4 +1,4 @@
 package composants;
 
-public class Sequence implements RelationnalModel{
+public class Sequence implements RelationalModel {
 }

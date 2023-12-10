@@ -19,6 +19,12 @@ public class RelationVerifier implements IVerifier {
     }
 
 
+    /**
+     * Verify whether a Relation with param nomRelation as its name exists
+     * in the Relations' list of the current database.
+     * @param nomRelation the name of the searched Relation.
+     * @return A boolean representing the research result.
+     */
     @Override
     public boolean isExisting(String nomRelation) {
 
@@ -27,13 +33,21 @@ public class RelationVerifier implements IVerifier {
         return Files.exists(path, LinkOption.NOFOLLOW_LINKS);
     }
 
+    /**
+     * Verify whether a Relation with param nomRelation as its name exists
+     * in the Relations' list of the current database. If it exists, do nothing.
+     * Else, throw an Exception.
+     * @param nomRelation the name of the searched Relation.
+     * @throws Exception telling that that searched Relation does not exist in
+     *      the database of this RelationVerifier.
+     */
     @Override
     public void verifyExisting(String nomRelation)
             throws Exception {
 
         if ( !isExisting( nomRelation ) )
-            throw new Exception("Azafady nama fa tena tsy mi-existe io Relation "
-                    +nomRelation+" io!");
+            throw new Exception("Azafady nama fa tena tsy mi-existe ame Database \""
+                    + pathToDb.split("/")[1] +"\" io Relation \"" +nomRelation+"\" io!");
     }
 
 

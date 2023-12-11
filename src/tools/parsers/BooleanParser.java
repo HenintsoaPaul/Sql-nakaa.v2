@@ -1,4 +1,4 @@
-package commands.executors.insert.parsers;
+package tools.parsers;
 
 public class BooleanParser implements IValueParser {
 

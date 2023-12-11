@@ -4,8 +4,10 @@ import tools.IValueProcessor;
 
 public class CommaRemover implements IValueProcessor {
 
+    public CommaRemover() {}
+
     @Override
-    public static String process(String value) {
+    public String process(String value) {
 
         return value.replace(",", "");
     }

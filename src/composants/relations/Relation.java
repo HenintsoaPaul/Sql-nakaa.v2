@@ -56,6 +56,18 @@ public class Relation implements Serializable, RelationalModel {
     }
 
 
+    public String[] getNomAttributs() {
+
+        Attribut[] attributs = this.getAttributs();
+        int len = attributs.length;
+        String[] noms = new String[len];
+
+        for (int i = 0; i < len; i ++)
+            noms[i] = attributs[i].getNomAttribut();
+
+        return noms;
+    }
+
 
     // Getters Attribs
     public Attribut[] getAttrib(Attribut[] atb1, Attribut[] atb2) {
@@ -85,6 +97,21 @@ public class Relation implements Serializable, RelationalModel {
                         nomAttribut
                 ));
     }
+    public Attribut[] getAttributs(String[] nomAttributs) throws Exception {
+
+        if (nomAttributs[0].equalsIgnoreCase("aby")) {
+            return this.getAttributs();
+        }
+
+        int len = nomAttributs.length;
+        Attribut[] attributs = new Attribut[len];
+
+        for( int i = 0; i < len; i++ ) {
+            attributs[i] = new Attribut( nomAttributs[i],
+                    this.getTypeAttribut( nomAttributs[i] ) );
+        }
+        return attributs;
+    }
 
     public int getIndexAttrib(String nomAttribut) throws Exception {
         for ( int i = 0; i < this.getAttributs().length; i++ )
@@ -105,11 +132,17 @@ public class Relation implements Serializable, RelationalModel {
      */
     public int[] getIndexAttribs(String[] nomDesAttribs)
             throws Exception {
-        int len = nomDesAttribs.length;
-        int[] result = new int[len];
 
-        for ( int i = 0; i < len; i++ )
-            result[i] = getIndexAttrib( nomDesAttribs[i] );
+        int len = nomDesAttribs.length;
+        if (nomDesAttribs[0].equalsIgnoreCase("aby") && len == 1) {
+
+            nomDesAttribs = this.getNomAttributs();
+            len = nomDesAttribs.length;
+        }
+
+        int[] result = new int[len];
+        for (int i = 0; i < len; i++)
+            result[i] = getIndexAttrib(nomDesAttribs[i]);
 
         return result;
     }
@@ -167,6 +200,7 @@ public class Relation implements Serializable, RelationalModel {
 
         // Verification of each line of data
         for ( Vector line: lignes ) verifyLine(line);
+
         this.lignes = lignes;
     }
 

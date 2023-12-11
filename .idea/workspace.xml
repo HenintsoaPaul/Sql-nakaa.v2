@@ -4,38 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/Projection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/InsertColumnsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/InsertValuesHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/BooleanParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/DoubleParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/IValueParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/IntegerParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/LocalDateParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/LocalDateTimeParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/StringParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/insert/parsers/ValueParserBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/debug/StringArrayDebug.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/IValueProcessor.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert.">
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectColumns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectConditionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/INumericalConditionVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/DifferenceVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/EqualVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InfEqualVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InferiorVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/NumericalConditionVerifierBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SupEqualVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SuperiorVerifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/BidirectionalMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/parsers/INumericParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/parsers/NumericParserBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/insert/Insert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/Select.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/drop/Drop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropBaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropBaseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropSequenceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropSequenceBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composants/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/Base.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composants/RelationnalModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/RelationalModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composants/Sequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/Sequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/insert/Insert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/InsertValuesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/insert/InsertValuesHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/BooleanParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/BooleanParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/DoubleParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/DoubleParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/IValueParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/IValueParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/IntegerParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/IntegerParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/LocalDateParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/LocalDateParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/LocalDateTimeParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/LocalDateTimeParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/StringParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/StringParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/ValueParserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/ValueParserBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/composants/relations/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Relation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composants/relations/RelationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/RelationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exe/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/Funct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Funct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/ILoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/ILoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/ISaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/ISaver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/savers/RelationSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/savers/RelationSaver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/valueProcessors/CommaRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/valueProcessors/CommaRemover.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +53,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -61,7 +71,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -72,24 +82,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/src/Main.java",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;select&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/src/Main.java&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="commands.executors" />
@@ -133,7 +143,9 @@
       <workItem from="1702174680489" duration="8344000" />
       <workItem from="1702218212646" duration="590000" />
       <workItem from="1702220700490" duration="3978000" />
-      <workItem from="1702227117141" duration="2237000" />
+      <workItem from="1702227117141" duration="17350000" />
+      <workItem from="1702272183323" duration="675000" />
+      <workItem from="1702286270258" duration="14204000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -143,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702177832002</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert.">
+      <option name="closed" value="true" />
+      <created>1702229668114</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702229668114</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +171,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes." />
-    <option name="LAST_COMMIT_MESSAGE" value="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes." />
+    <MESSAGE value="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert." />
   </component>
 </project>

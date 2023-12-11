@@ -1,15 +1,15 @@
-package commands.executors.insert.parsers;
+package tools.parsers;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class LocalDateTimeParser implements IValueParser {
+public class LocalDateParser implements IValueParser {
 
 
     @Override
     public Object parse(String value) {
 
-        String format = "dd-MM-yyyy HH:mm:ss";
+        String format = "dd-MM-yyyy";
         return LocalDateTime.parse( value, DateTimeFormatter.ofPattern(format));
     }
 }

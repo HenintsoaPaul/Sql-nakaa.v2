@@ -1,77 +1,46 @@
 package commands.executors.select.conditions;
 
-import tools.Funct;
+import commands.executors.select.SelectWhere;
+import composants.relations.Attribut;
+import composants.relations.Relation;
+import composants.relations.RelationOperator;
+import exe.Affichage;
 
-import java.util.Arrays;
+import java.util.*;
 
+@SuppressWarnings("rawtypes")
 public abstract class ConditionGetter {
 
-    static final String[] SEPARATORS = {"refa", "na", "ary"};
+    /**
+     * It returns each conditions in String[]( they're split using
+     * " " as separator ). So, it returns a String[][] containing all
+     * conditions in the query.
+     * @param refa String[] from 'where'
+     */
+    public static List<String[]> getConditions(List<String> refa) {
 
-    public static String[][] getConditions(String[] commands, int indexRefa) {
+        String query = String.join(" ", refa);
+        String[] separators = {"na", "ary", "NA", "ARY"};
+        String regex = String.join("|", separators);
 
-        int nbConditions = countConditions(commands, indexRefa);
-        if (nbConditions <= 0)
+        String[] conditionss= query.split(regex);
+        int nbConditions = conditionss.length;
+        if (nbConditions == 0)
             throw new IllegalArgumentException("Invalid nbConditions");
-//        System.out.println("nbConditions: "+ nbConditions);
 
-        String[][] conditions = new String[nbConditions][];
+        List<String[]> conditions = new ArrayList<>();
+        for (String s : conditionss) {
 
-        for (int ind = indexRefa, i = 0; ind < commands.length; ind++) {
-
-            String word = commands[ind];
-            if (Arrays.asList(SEPARATORS).contains(word.toLowerCase())) {
-
-                int indexSeparator = ind;
-                String[] condition = getCondition(commands, indexSeparator+1);
-                conditions[i] = condition;
-
-                i++;
-                ind += condition.length;
+            String[] cond = s.split(" ");
+            if (cond[0].isEmpty()) {
+                List<String> temp = Arrays.asList(cond).subList(1, cond.length);
+                cond = temp.toArray(new String[0]);
             }
+            conditions.add(cond);
         }
+
         return conditions;
     }
-
-    private static int countConditions(String[] commands, int indexRefa){
-
-        int countConditions = 1,
-                k = indexRefa + 1;
-        while (k < commands.length) {
-            if (commands[k].equalsIgnoreCase("ARY")
-                    || commands[k].equalsIgnoreCase("NA")) {
-                countConditions++;
-            }
-            k++;
-        }
-        return countConditions;
-    }
-
-    static String[] getCondition(String[] commands, int startConditionIndex) {
-
-        int endIndex = findEndIndex(commands, startConditionIndex);
-//        System.out.println("endIndex: "+endIndex);
-        return Arrays.copyOfRange(commands, startConditionIndex, endIndex);
-    }
-
-    private static int findEndIndex(String[] commands, int startConditionIndex) {
-        int endIndex = -1;
-        for (String separator : SEPARATORS) {
-            int tempIndex = Arrays.asList(commands).subList(startConditionIndex, commands.length)
-                    .indexOf(separator);
-            if (tempIndex != -1 && (endIndex == -1 || tempIndex < endIndex)) {
-                endIndex = tempIndex;
-            }
-        }
-
-        if (endIndex == -1) {
-            endIndex = commands.length;
-        } else {
-            endIndex += startConditionIndex;
-        }
-        return endIndex;
-    }
-
 
     /**
      * It returns all the "ary" and "na" in the commands
@@ -79,12 +48,78 @@ public abstract class ConditionGetter {
      */
     public static String[] getConditionSeparator(String[] commands) {
 
-        String[] separators = {"ARY", "NA"};
-        int startIndex = Arrays.asList(commands).indexOf("REFA") + 1;
+        List<String> cmd = Arrays.asList(commands);
+        int startIndex = cmd.contains("refa") ?
+                cmd.indexOf("refa") :
+                cmd.indexOf("REFA");
+//        System.out.println("index refa:"+startIndex);
 
+        List<String> separators = Arrays.asList("ary", "na");
         return Arrays.stream(commands)
-                .skip(startIndex)
-                .filter(command -> Arrays.asList(separators).contains(command))
+                .skip(startIndex+1)
+                .filter(command ->
+                        separators.contains(command)
+                        || separators.contains(command.toLowerCase()))
                 .toArray(String[]::new);
+    }
+
+    public static Relation getRelation(List<String[]> conditions,
+                                       List<String> separators,
+                                       Relation relation)
+            throws Exception {
+        // transform each condition to a Relation
+        List<Relation> relationsFromConditions = new ArrayList<>();
+        Attribut[] attributs = relation.getAttributs();
+        for (String[] cond: conditions) {
+
+            Relation rel = new Relation(attributs);
+            Vector<Vector> lignes = SelectWhere.getLignesWhere(relation, cond);
+            rel.setLignes(lignes);
+            relationsFromConditions.add(rel);
+        }
+
+        // do all "ARY"
+        Iterator<String> aryIterator = separators.iterator();
+        while (aryIterator.hasNext()) {
+            String sep = aryIterator.next();
+            if (sep.equalsIgnoreCase("ARY")) {
+                processSeparator(separators, sep, relationsFromConditions, aryIterator);
+            }
+        }
+
+        // do all "NA"
+        Iterator<String> naIterator = separators.iterator();
+        while (naIterator.hasNext()) {
+            String sep = naIterator.next();
+            if (sep.equalsIgnoreCase("NA")) {
+                processSeparator(separators, sep, relationsFromConditions, naIterator);
+            }
+        }
+        return relationsFromConditions.get(0);
+    }
+    static void processSeparator(List<String> separators, String sep,
+                                 List<Relation> relationsFromConditions,
+                                 Iterator<String> sepIterator)
+            throws Exception {
+
+        int indexSep = separators.contains(sep) ?
+                separators.indexOf(sep.toLowerCase()) :
+                separators.indexOf(sep.toUpperCase());
+
+        // process
+        Relation rel1 = relationsFromConditions.get(indexSep),
+                rel2 = relationsFromConditions.get(indexSep+1);
+
+        Relation temp = sep.equalsIgnoreCase("ary") ?
+                RelationOperator.intersection(rel1, rel2) :
+                RelationOperator.union(rel1, rel2);
+        Affichage.afficherDonnees(temp);
+
+        // delete the old relations rel1 and rel2 from the list
+        relationsFromConditions.remove(indexSep+1);
+        relationsFromConditions.set(indexSep, temp);
+
+        // delete sep from separators
+        sepIterator.remove();
     }
 }

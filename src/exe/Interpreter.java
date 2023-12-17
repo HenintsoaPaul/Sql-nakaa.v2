@@ -47,7 +47,7 @@ public class Interpreter {
         if ( this.getHost().getDbName().compareTo( baseName ) == 0 )
             throw new Exception("Efa amn'io Base io anao zao nama!");
 
-        new BaseVerifier().verifyExisting(baseName);
+        new BaseVerifier(this.getDbPath()).verifyExisting(baseName);
 
         this.getHost().changeDb(baseName);
         System.out.println("Yesss, nifindra ame Base '"

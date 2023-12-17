@@ -2,15 +2,12 @@ package commands.executors.select;
 
 import commands.executors.select.conditions.ConditionGetter;
 import composants.relations.Relation;
-import tools.Funct;
+import exe.Affichage;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Vector;
-
-import static commands.executors.select.SelectWhere.getLignesWhere;
-import static commands.executors.select.conditions.ConditionGetter.getConditionSeparator;
-import static commands.executors.select.conditions.ConditionProcessor.inverseAllTsyConditions;
-import static commands.executors.select.conditions.ConditionVerifier.verifyAllConditions;
 
 @SuppressWarnings({"rawTypes", "rawtypes"})
 public abstract class SelectLines {
@@ -42,51 +39,34 @@ public abstract class SelectLines {
     }
 
 
-
+    /**
+     * Drop rows of rel who don't respect the conditions.
+     */
     static void selectWhere(String[] commande, Relation rel)
             throws Exception {
 
-        int index = Arrays.asList(commande).indexOf("REFA");
-        if (index == -1)
-            index = Arrays.asList(commande).indexOf("refa");
+        String where = "refa";
+        List<String> cmd = Arrays.asList(commande);
+        int indexWhere = cmd.contains(where) ?
+                cmd.indexOf(where) :
+                cmd.indexOf(where.toUpperCase());
 
-        if ( index != -1 ) { // whether there is "REFA" is the query
+        if ( indexWhere != -1 ) {
 
-            String[][] conditions = ConditionGetter.getConditions(commande, index);
+            List<String> refa = cmd.subList(indexWhere+1, cmd.size());
+            List<String[]> conditions = ConditionGetter.getConditions(refa);
+            String[] separatorsS = ConditionGetter.getConditionSeparator(commande);
+            List<String> separators = new ArrayList<>(List.of(separatorsS));
 
-            inverseAllTsyConditions(conditions);
+            Relation relation =
+                    ConditionGetter.getRelation(conditions, separators, rel);
+            Affichage.afficherDonnees(relation);
 
-            verifyAllConditions(conditions, rel);
-
-            Vector<Vector> lignes = rel.getLignes();
-
-            lignes = getLignesWhere(rel, conditions[0], lignes);
-
-//            -------
-
-            if (conditions.length > 1) {
-
-                String[] operators = getConditionSeparator(commande);
-                for (int i = 1; i < conditions.length; i++) {
-
-                    int m = i - 1;
-                    switch (operators[m]) {
-                        case "ARY":
-                            lignes = getLignesWhere(rel, conditions[i], lignes);
-                            break;
-
-                        case "NA":
-                            Vector<Vector> nvResults =
-                                    getLignesWhere(rel, conditions[i], rel.getLignes());
-                            lignes = Funct.unionSansRepetition(lignes, nvResults);
-                            break;
-
-                        default:
-                            throw new Exception("Unknown logic operator!");
-                    }
-                }
-            }
-            rel.setLignes(lignes);
+//            inverseAllTsyConditions(conditions);
+//            verifyAllConditions(conditions, rel);
+//            Vector<Vector> lignes = rel.getLignes();
+//            lignes = getLignesWhere(rel, conditions[0]);
+//            rel.setLignes(lignes);
         }
     }
 }

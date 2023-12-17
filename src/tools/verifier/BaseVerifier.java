@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 public class BaseVerifier implements IVerifier {
 
-    String pathToData = "data/";
+    String pathToData = "/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/data/";
     public BaseVerifier() {}
     public BaseVerifier(String pathToData) {
         this.pathToData = pathToData;

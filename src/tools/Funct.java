@@ -1,30 +1,11 @@
 package tools;
 
-import composants.relations.Relation;
-import exe.Sql_nakaa;
+import composants.relations.RelationOperator;
 
 import java.util.Vector;
 
+@SuppressWarnings("rawtypes")
 public class Funct {
-
-    Sql_nakaa sql_nakaa;
-
-
-
-    // Constructor
-    public Funct(Sql_nakaa sql_nakaa) {
-        this.sql_nakaa = sql_nakaa;
-    }
-
-
-
-    // Getters
-    public Sql_nakaa getSql_nakaa() {
-        return this.sql_nakaa;
-    }
-
-
-
 
     // int functions
     public static boolean isInTabInt( int[] tab, int myElmt ) {
@@ -41,8 +22,8 @@ public class Funct {
     }
     public static boolean isInTabString( String[] tab, String myElmt ) {
         for ( String elmt: tab )
-            if ( myElmt.compareTo( elmt ) == 0 ) return true;
-        return false;
+            if ( myElmt.compareTo( elmt ) == 0 ) return false;
+        return true;
     }
 
 
@@ -63,10 +44,11 @@ public class Funct {
     // Vectors
     public static boolean isInVectorOfVector(Vector<Vector> vectVect, Vector elmt ) {
         for ( Vector v: vectVect )
-            if ( Relation.isLignesIdentiques( v, elmt ) )
+            if ( RelationOperator.isLignesIdentiques( v, elmt ) )
                 return true;
         return false;
     }
+    @SuppressWarnings("unchecked")
     public static Vector<Vector> unionSansRepetition(Vector<Vector> data1, Vector<Vector> data2 ) {
         Vector<Vector> results = new Vector( data1 );
         for ( Vector ligne: data2 ) {

@@ -12,25 +12,27 @@ import java.util.Vector;
 public abstract class SelectWhere {
 
     /**
-     * It returns the lines respecting the specified condition.
+     * It returns the lines respecting the specified condition
+     * from all the original lines of the relation 'rel' given
+     * as parameter.
      */
-    static Vector<Vector> getLignesWhere (Relation rel, String[] condition, Vector<Vector> dataOrg )
+    public static Vector<Vector> getLignesWhere (Relation rel, String[] condition)
             throws Exception {
-
-        Vector<Vector> result = new Vector<>();
 
         String columnName = condition[0];
         int indexColumn = rel.getIndexAttrib( columnName );
         Class<?> classColumn = rel.getClassOfAttrib( columnName );
 
-        for( Vector ligneOrg: dataOrg )
+        Vector<Vector> result = new Vector<>();
+        for( Vector ligneOrg: rel.getLignes() )
             if ( isVerifyingRow( ligneOrg, condition, indexColumn, classColumn ) )
                 result.add( ligneOrg );
 
         return result;
     }
 
-    static boolean isVerifyingRow(Vector ligne, String[] condition, int indexAttrib, Class clazz )
+    static boolean isVerifyingRow(Vector ligne, String[] condition,
+                                  int indexAttrib, Class clazz )
             throws Exception {
 
         String columnType = clazz.getSimpleName();
@@ -47,9 +49,7 @@ public abstract class SelectWhere {
         INumericalConditionVerifier conditionVerifier =
                 NumericalConditionVerifierBuilder.build(operator);
 
-        boolean is = conditionVerifier.isTrue(valueFromRelation, valueVerifier);
-//        System.out.println("is: "+ is+"\n---");
-
-        return is;
+        //        System.out.println("is: "+ is+"\n---");
+        return conditionVerifier.isTrue(valueFromRelation, valueVerifier);
     }
 }

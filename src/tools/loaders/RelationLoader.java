@@ -2,7 +2,6 @@ package tools.loaders;
 
 import composants.RelationalModel;
 import composants.relations.Relation;
-import exe.Interpreter;
 import tools.ILoader;
 import tools.verifier.BaseVerifier;
 import tools.verifier.RelationVerifier;
@@ -16,13 +15,13 @@ public class RelationLoader implements ILoader {
     public static Relation loadRelation(String nomRelation, String pathToDb)
             throws Exception {
 
-        // pathToDb ~ "data/first_db"
-        String dbName = pathToDb.split("/")[1];
+        String[] pathStrings = pathToDb.split("/");
+        String dbName = pathStrings[ pathStrings.length-1 ];
 
         new BaseVerifier().verifyExisting(dbName);
         new RelationVerifier(pathToDb).verifyExisting(nomRelation);
 
-        Relation rel = null;
+        Relation rel;
         String fileName = pathToDb + "/relations/" + nomRelation + ".ser";
         try {
 

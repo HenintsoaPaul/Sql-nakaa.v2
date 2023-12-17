@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Sql_nakaa {
 
-    String storagePath = "data/";           // path to data storage
+    String storagePath = "/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/data/";           // path to data storage
     String dbName = "first_db";             // name of the db
     String dbPath;                          // storagePath + dbName
 

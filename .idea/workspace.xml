@@ -4,43 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert.">
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectColumns.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectConditionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/INumericalConditionVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/DifferenceVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/EqualVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InfEqualVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InferiorVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/NumericalConditionVerifierBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SupEqualVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SuperiorVerifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/BidirectionalMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/parsers/INumericParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/parsers/NumericParserBuilder.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;">
+      <change afterPath="$PROJECT_DIR$/src/composants/relations/RelationOperator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/Insert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/insert/Insert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/InsertValuesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/insert/InsertValuesHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/BooleanParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/BooleanParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/DoubleParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/DoubleParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/IValueParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/IValueParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/IntegerParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/IntegerParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/LocalDateParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/LocalDateParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/LocalDateTimeParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/LocalDateTimeParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/StringParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/StringParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/insert/parsers/ValueParserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/ValueParserBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectConditionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/composants/relations/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Relation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composants/relations/RelationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/RelationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exe/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/valueProcessors/CommaRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/valueProcessors/CommaRemover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exe/Sql_nakaa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Sql_nakaa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/Funct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Funct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/verifier/BaseVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/BaseVerifier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,13 +98,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-11.0.21-corretto-11.0.21-3183f394aec4-585ed96d" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -145,7 +115,15 @@
       <workItem from="1702220700490" duration="3978000" />
       <workItem from="1702227117141" duration="17350000" />
       <workItem from="1702272183323" duration="675000" />
-      <workItem from="1702286270258" duration="14204000" />
+      <workItem from="1702286270258" duration="17696000" />
+      <workItem from="1702305157995" duration="277000" />
+      <workItem from="1702555567419" duration="34000" />
+      <workItem from="1702555611965" duration="7000" />
+      <workItem from="1702555633653" duration="8000" />
+      <workItem from="1702555722070" duration="348000" />
+      <workItem from="1702556659511" duration="1279000" />
+      <workItem from="1702816945228" duration="12914000" />
+      <workItem from="1702836770226" duration="4932000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -163,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702229668114</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;">
+      <option name="closed" value="true" />
+      <created>1702300754322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702300754322</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes." />
     <MESSAGE value="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert." />
-    <option name="LAST_COMMIT_MESSAGE" value="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert." />
+    <MESSAGE value="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;" />
   </component>
 </project>

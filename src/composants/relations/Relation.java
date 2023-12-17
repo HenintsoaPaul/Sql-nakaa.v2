@@ -11,7 +11,7 @@ import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.Vector;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings("ALL")
 public class Relation implements Serializable, RelationalModel {
 
     private static final long serialVersionUID = 11l;
@@ -45,17 +45,13 @@ public class Relation implements Serializable, RelationalModel {
 
 
     // Getters
+    public String getTypeAttribut(String nomAttribut)
+            throws Exception {
+        return this.getAttribut( nomAttribut ).getTypeAttribut();
+    }
     public String getNomRelation() {
         return this.nomRelation;
     }
-    public Attribut[] getAttributs() {
-        return this.attributs;
-    }
-    public Vector<Vector> getLignes() {
-        return this.lignes;
-    }
-
-
     public String[] getNomAttributs() {
 
         Attribut[] attributs = this.getAttributs();
@@ -67,26 +63,18 @@ public class Relation implements Serializable, RelationalModel {
 
         return noms;
     }
-
-
-    // Getters Attribs
-    public Attribut[] getAttrib(Attribut[] atb1, Attribut[] atb2) {
-        int len1 = atb1.length, len2 = atb2.length;
-        Attribut[] attribs = new Attribut[len1 + len2];
-
-        System.arraycopy(atb1, 0, attribs, 0, len1);
-        System.arraycopy(atb2, 0, attribs, len1, len2);
-
-        return attribs;
+    public Vector<Vector> getLignes() {
+        return this.lignes;
     }
-
-    public Attribut getAttrib(int indexAttrib) throws Exception {
+    public Attribut getAttrib(int indexAttrib)
+            throws Exception {
         if ( indexAttrib >= this.getAttributs().length )
             throw new Exception("Relation error: Index Out Bound bro!");
 
         return this.getAttributs()[indexAttrib];
     }
-    public Attribut getAttribut(String nomAttribut) throws Exception {
+    public Attribut getAttribut(String nomAttribut)
+            throws Exception {
         for (Attribut atb: this.getAttributs())
             if (atb.getNomAttribut().equals(nomAttribut))
                 return atb;
@@ -97,7 +85,20 @@ public class Relation implements Serializable, RelationalModel {
                         nomAttribut
                 ));
     }
-    public Attribut[] getAttributs(String[] nomAttributs) throws Exception {
+    public Attribut[] getAttributs() {
+        return this.attributs;
+    }
+    public Attribut[] getAttrib(Attribut[] atb1, Attribut[] atb2) {
+        int len1 = atb1.length, len2 = atb2.length;
+        Attribut[] attribs = new Attribut[len1 + len2];
+
+        System.arraycopy(atb1, 0, attribs, 0, len1);
+        System.arraycopy(atb2, 0, attribs, len1, len2);
+
+        return attribs;
+    }
+    public Attribut[] getAttributs(String[] nomAttributs)
+            throws Exception {
 
         if (nomAttributs[0].equalsIgnoreCase("aby")) {
             return this.getAttributs();
@@ -112,8 +113,8 @@ public class Relation implements Serializable, RelationalModel {
         }
         return attributs;
     }
-
-    public int getIndexAttrib(String nomAttribut) throws Exception {
+    public int getIndexAttrib(String nomAttribut)
+            throws Exception {
         for ( int i = 0; i < this.getAttributs().length; i++ )
             if ( getAttrib(i).getNomAttribut().equals(nomAttribut) ) return i;
 
@@ -123,12 +124,9 @@ public class Relation implements Serializable, RelationalModel {
                         nomAttribut
                 ));
     }
-
     /**
-     *
      * @param nomDesAttribs - Array of String nomAttrib
      * @return Array containing the index of each nomAttrib
-     * @throws Exception
      */
     public int[] getIndexAttribs(String[] nomDesAttribs)
             throws Exception {
@@ -145,9 +143,6 @@ public class Relation implements Serializable, RelationalModel {
             result[i] = getIndexAttrib(nomDesAttribs[i]);
 
         return result;
-    }
-    public String getTypeAttribut(String nomAttribut) throws Exception {
-        return this.getAttribut( nomAttribut ).getTypeAttribut();
     }
     public Class getClassOfAttrib(String nomAttribut) throws Exception {
         String type = this.getTypeAttribut(nomAttribut);
@@ -315,84 +310,5 @@ public class Relation implements Serializable, RelationalModel {
     void verifyLine(Vector line) throws Exception {
         verifySameNumberOfAttribs(line);
         verifyMatchingTypes(line);
-    }
-
-
-    /**
-     * FUNCTIONS WITH OTHER RELATIONS
-     */
-    // Exception verifications
-    void verifySameNumberOfAttribs(Relation rel) throws Exception {
-        int atbLen  = this.getAttributs().length;
-        int len = rel.getAttributs().length;
-        if ( atbLen != len )
-            throw new Exception("Relation Error: The two Relations must have the same "+
-                    "number of attribs: 1st=> "+ atbLen+ " | 2nd=> "+ len);
-    }
-
-    // All functions will use those
-    Relation initRelation( Relation rel, String operation ) throws Exception {
-        if ( rel == null )
-            throw new Exception("Relation ERROR: Impossible de realiser l'operation "
-                    +operation+" CAR la deuxieme relation est NULL!");
-        /*
-        *   Qu'importe l'operation, la Relation result aura tjrs comme attributs les
-        *   attributs de la Relation "this".
-        */
-        verifySameNumberOfAttribs( rel );
-        String nom = this.getNomRelation()+ "_"+
-                operation.toUpperCase()+ "_"+ rel.getNomRelation();
-        return new Relation( nom, this.getAttributs() );
-    }
-    public static boolean isLignesIdentiques( Vector un, Vector deux ) {
-        for ( int i = 0; i < un.size(); i++ )
-            if ( un.get(i).toString().compareTo( deux.get(i).toString() ) != 0 )
-                return false;
-        return true;
-    }
-
-    //  1*) UNION
-    public Relation union( Relation rel ) throws Exception {
-        Relation result = initRelation( rel, "union" );
-
-        // ajout des tout les lignes de deux relations
-        Vector<Vector> li = new Vector( this.getLignes() );
-        li.addAll(rel.getLignes());
-        result.setLignes( li );
-
-        return result;
-    }
-
-    //  2*) INTERSECTION
-    public Relation intersection( Relation rel ) throws Exception {
-        Relation result = initRelation( rel, "intersection" );
-        result.setLignes(getLignesCorrespondantes( this.getLignes(), rel.getLignes() ));
-        return result;
-    }
-    Vector<Vector> getLignesCorrespondantes( Vector<Vector> l1, Vector<Vector> l2 ) {
-        Vector<Vector> result = new Vector<Vector>();
-        for ( Vector ligneL1: l1 )
-            for ( Vector ligneL2: l2 ) {
-                if ( isLignesIdentiques( ligneL1, ligneL2 ) ) result.add( ligneL1 );
-            }
-        return result;
-    }
-
-    //  3*) DIFFERENCE
-    public Relation difference( Relation rel ) throws Exception {
-        Relation result = initRelation( rel, "difference" );
-        result.setLignes( getLignesDifferentes( rel.getLignes() ) );
-        return result;
-    }
-    Vector<Vector> getLignesDifferentes( Vector<Vector> lignes2 ) {
-        Vector<Vector> result = new Vector();
-        for ( Vector l1 : this.getLignes() )
-            if ( !ligneDans( l1, lignes2 ) ) result.add( l1 );
-        return result;
-    }
-    boolean ligneDans( Vector ligneVerif, Vector<Vector> listeLignes ) {
-        for ( Vector li : listeLignes )
-            if ( isLignesIdentiques( li, ligneVerif ) ) return true;
-        return false;
     }
 }

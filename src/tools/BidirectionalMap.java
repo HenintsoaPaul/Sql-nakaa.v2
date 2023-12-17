@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BidirectionalMap<K, V> {
-    private Map<K, V> forwardMap = new HashMap<>();
-    private Map<V, K> reverseMap = new HashMap<>();
+    private final Map<K, V> forwardMap = new HashMap<>();
+    private final Map<V, K> reverseMap = new HashMap<>();
 
     public BidirectionalMap() {}
 

@@ -7,6 +7,7 @@ import java.util.Vector;
 
 public class Affichage {
     final static int MAX_COL_LONG = 20, MIN_COL_LONG = 1;
+    @SuppressWarnings("unchecked")
     public static void afficherDonnees(Relation rel) throws Exception {
         Attribut[] attribs = rel.getAttributs();
         int lenAtb = attribs.length;

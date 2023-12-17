@@ -2,14 +2,12 @@ package commands.executors.insert;
 
 import commands.IExecutor;
 import composants.relations.Relation;
-import debug.StringArrayDebug;
 import exe.Interpreter;
 import tools.Funct;
 import tools.loaders.RelationLoader;
 import tools.savers.RelationSaver;
 import tools.verifier.RelationVerifier;
 
-import java.io.IOException;
 import java.util.Vector;
 
 public class Insert implements IExecutor {

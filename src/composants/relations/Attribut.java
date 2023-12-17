@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Attribut implements Serializable {
 
+    @SuppressWarnings("LongLiteralEndingWithLowercaseL")
     private static final long serialVersionUID = 10l;
     String nomAttribut;
     String typeAttribut;

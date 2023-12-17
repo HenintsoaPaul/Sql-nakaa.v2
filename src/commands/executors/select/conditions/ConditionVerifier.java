@@ -20,7 +20,7 @@ public abstract class ConditionVerifier {
 
         // verification des conditions numeriques: == ou < ou > ou >= ou <= ou <>
         String[] operationPossibles = { "==", "<", ">", ">=", "<=", "<>" };
-        if ( !Funct.isInTabString( operationPossibles, condition[1] ) )
+        if (Funct.isInTabString(operationPossibles, condition[1]))
             throw new Exception("L'operation "+condition[1]+" est inconnue!"+
                     "Les operations possibles sont: "+String.join(", ", operationPossibles));
         else if ( !rel.isNumericAttrib( nomAttrib) )
@@ -37,11 +37,7 @@ public abstract class ConditionVerifier {
                 catch ( NumberFormatException nfee ) {
                     throw new Exception( "ERROR: Tokony ho nombre ny condition ampesaina "+
                             "rehefa mampiasa operateur numerique: column (cond_numerique) number" );
-                } catch ( Exception ee ) {
-                    throw ee;
                 }
-            } catch ( Exception e ) {
-                throw e;
             }
         }
     }

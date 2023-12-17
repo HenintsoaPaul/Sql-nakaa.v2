@@ -54,7 +54,7 @@ public class RelationVerifier implements IVerifier {
 
     public static void isAllowedAttributType(String attrib) throws Exception {
 
-        if ( !Funct.isInTabString( allowedTypes, attrib ) )
+        if (Funct.isInTabString(allowedTypes, attrib))
             throw new Exception( "Le type "+attrib+" n'existe pas!"+
                     " Les types existantes sont: "+
                     String.join( ", ", allowedTypes) );

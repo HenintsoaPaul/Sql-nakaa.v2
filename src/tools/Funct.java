@@ -6,7 +6,6 @@ import java.util.Vector;
 
 @SuppressWarnings("rawtypes")
 public class Funct {
-
     // int functions
     public static boolean isInTabInt( int[] tab, int myElmt ) {
         for ( int elmt: tab )
@@ -19,11 +18,6 @@ public class Funct {
     // String functions
     public static String takeOffComma(String str) {
         return str.split(",")[0];
-    }
-    public static boolean isInTabString( String[] tab, String myElmt ) {
-        for ( String elmt: tab )
-            if ( myElmt.compareTo( elmt ) == 0 ) return false;
-        return true;
     }
 
 

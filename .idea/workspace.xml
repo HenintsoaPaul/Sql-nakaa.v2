@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;">
-      <change afterPath="$PROJECT_DIR$/src/composants/relations/RelationOperator.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Separation de la responsabilite de gestion du stockage des donnees dans une classe a part, autre que Sql_nakaa.java.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectConditionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composants/relations/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Relation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exe/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exe/Sql_nakaa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Sql_nakaa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionInverser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/BidirectionalMap.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/Funct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Funct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/verifier/BaseVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/BaseVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/parsers/NumericParserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/NumericParserBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +32,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -48,7 +50,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -123,7 +125,9 @@
       <workItem from="1702555722070" duration="348000" />
       <workItem from="1702556659511" duration="1279000" />
       <workItem from="1702816945228" duration="12914000" />
-      <workItem from="1702836770226" duration="4932000" />
+      <workItem from="1702836770226" duration="5596000" />
+      <workItem from="1702914182401" duration="56000" />
+      <workItem from="1703703445202" duration="7112000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -149,7 +153,31 @@
       <option name="project" value="LOCAL" />
       <updated>1702300754322</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="select with multiple predicats in only one query. The query don't induce errors but still unverified in all real cases of use with true data.">
+      <option name="closed" value="true" />
+      <created>1702842282055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702842282055</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajout des fichiers uncommitted.">
+      <option name="closed" value="true" />
+      <created>1702842356634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702842356634</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Separation de la responsabilite de gestion du stockage des donnees dans une classe a part, autre que Sql_nakaa.java.">
+      <option name="closed" value="true" />
+      <created>1703705627829</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703705627829</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +187,9 @@
     <MESSAGE value="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes." />
     <MESSAGE value="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert." />
     <MESSAGE value="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;" />
+    <MESSAGE value="select with multiple predicats in only one query. The query don't induce errors but still unverified in all real cases of use with true data." />
+    <MESSAGE value="Ajout des fichiers uncommitted." />
+    <MESSAGE value="Separation de la responsabilite de gestion du stockage des donnees dans une classe a part, autre que Sql_nakaa.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Separation de la responsabilite de gestion du stockage des donnees dans une classe a part, autre que Sql_nakaa.java." />
   </component>
 </project>

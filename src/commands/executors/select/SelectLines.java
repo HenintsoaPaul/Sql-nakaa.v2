@@ -2,12 +2,14 @@ package commands.executors.select;
 
 import commands.executors.select.conditions.ConditionGetter;
 import composants.relations.Relation;
-import exe.Affichage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
+
+import static commands.executors.select.conditions.ConditionInverser.inverseAllTsyConditions;
+import static commands.executors.select.conditions.ConditionVerifier.verifyAllConditions;
 
 @SuppressWarnings({"rawTypes", "rawtypes"})
 public abstract class SelectLines {
@@ -42,31 +44,30 @@ public abstract class SelectLines {
     /**
      * Drop rows of rel who don't respect the conditions.
      */
-    static void selectWhere(String[] commande, Relation rel)
+    static Relation selectWhere(String[] commande, Relation rel)
             throws Exception {
 
-        String where = "refa";
         List<String> cmd = Arrays.asList(commande);
-        int indexWhere = cmd.contains(where) ?
-                cmd.indexOf(where) :
-                cmd.indexOf(where.toUpperCase());
-
+        int indexWhere = getIndexOfWhere(cmd);
         if ( indexWhere != -1 ) {
-
             List<String> refa = cmd.subList(indexWhere+1, cmd.size());
             List<String[]> conditions = ConditionGetter.getConditions(refa);
+
+            inverseAllTsyConditions(conditions);
+            verifyAllConditions(conditions, rel);
+
             String[] separatorsS = ConditionGetter.getConditionSeparator(commande);
             List<String> separators = new ArrayList<>(List.of(separatorsS));
 
-            Relation relation =
-                    ConditionGetter.getRelation(conditions, separators, rel);
-            Affichage.afficherDonnees(relation);
-
-//            inverseAllTsyConditions(conditions);
-//            verifyAllConditions(conditions, rel);
-//            Vector<Vector> lignes = rel.getLignes();
-//            lignes = getLignesWhere(rel, conditions[0]);
-//            rel.setLignes(lignes);
+            rel = ConditionGetter.getRelation(conditions, separators, rel);
         }
+
+        return rel;
+    }
+    static int getIndexOfWhere(List<String> cmd) {
+        String where = "refa";
+        return cmd.contains(where) ?
+                cmd.indexOf(where) :
+                cmd.indexOf(where.toUpperCase());
     }
 }

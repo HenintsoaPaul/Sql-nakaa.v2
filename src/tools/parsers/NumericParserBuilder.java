@@ -3,7 +3,6 @@ package tools.parsers;
 import java.util.HashMap;
 
 public abstract class NumericParserBuilder {
-
     static HashMap<String, INumericParser> parsers = new HashMap<>();
 
     static {
@@ -12,7 +11,6 @@ public abstract class NumericParserBuilder {
     }
 
     public static INumericParser build(String numericType) {
-
         return parsers.get(numericType);
     }
 }

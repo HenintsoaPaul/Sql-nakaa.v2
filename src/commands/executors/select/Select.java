@@ -36,7 +36,7 @@ public class Select implements IExecutor {
 //        rel = Joint.joints(rel, commands, inter);
 
         // LIGNES <- WHERE
-        SelectLines.selectWhere(commands, rel);
+        rel = SelectLines.selectWhere(commands, rel);
 
 
         // COLONNES

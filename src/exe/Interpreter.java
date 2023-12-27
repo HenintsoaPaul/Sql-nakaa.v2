@@ -6,52 +6,43 @@ import tools.verifier.BaseVerifier;
 
 @SuppressWarnings("unused")
 public class Interpreter {
+    DataStorageManager dataStorageManager;
 
-    Sql_nakaa sql_nakaa;
+    public DataStorageManager getDataStorageManager() {
+        return dataStorageManager;
+    }
 
+    public void setDataStorageManager(DataStorageManager dataStorageManager) {
+        this.dataStorageManager = dataStorageManager;
+    }
 
     // Constructor
-    public Interpreter(Sql_nakaa sql_nakaa) {
-
-        this.setHost( sql_nakaa );
+    public Interpreter(DataStorageManager dataStorageManager) {
+        setDataStorageManager(dataStorageManager);
     }
+
 
 
 
     // Getters
-    public Sql_nakaa getHost() {
-        // return the exe.Sql_nakaa instance
-
-        return this.sql_nakaa;
-    }
     public String getDbName() {
-        // return the name of the current db
-
-        return this.getHost().getDbName();
+        return this.getDataStorageManager().getDbName();
     }
     public String getDbPath() {
-        // return path the current db
-
-        return this.getHost().getDbPath();
+        return this.getDataStorageManager().getDbPath();
     }
 
 
 
     // Setters
-    public void setHost(Sql_nakaa h) {
-        this.sql_nakaa = h;
-    }
-
     public void changeDb(String baseName) throws Exception {
 
-        if ( this.getHost().getDbName().compareTo( baseName ) == 0 )
+        if ( getDbName().compareTo( baseName ) == 0 )
             throw new Exception("Efa amn'io Base io anao zao nama!");
 
         new BaseVerifier(this.getDbPath()).verifyExisting(baseName);
 
-        this.getHost().changeDb(baseName);
-        System.out.println("Yesss, nifindra ame Base '"
-                + baseName+ "' itsika zao nama!");
+        dataStorageManager.changeDb(baseName);
     }
 
 

@@ -1,4 +1,4 @@
-package commands.executors.select;
+package commands.executors.select.where;
 
 import commands.executors.select.conditions.ConditionGetter;
 import composants.relations.Relation;
@@ -44,7 +44,7 @@ public abstract class SelectLines {
     /**
      * Drop rows of rel who don't respect the conditions.
      */
-    static Relation selectWhere(String[] commande, Relation rel)
+    public static Relation selectWhere(String[] commande, Relation rel)
             throws Exception {
 
         List<String> cmd = Arrays.asList(commande);

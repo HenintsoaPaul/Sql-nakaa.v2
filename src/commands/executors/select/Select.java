@@ -1,12 +1,17 @@
 package commands.executors.select;
 
 import commands.IExecutor;
+import commands.executors.select.join.JoinHandlerFactory;
+import commands.executors.select.where.SelectLines;
 import composants.relations.Relation;
 import exe.Affichage;
 import exe.Interpreter;
 import tools.Funct;
 import tools.loaders.RelationLoader;
 import tools.verifier.RelationVerifier;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Select implements IExecutor {
 
@@ -32,14 +37,19 @@ public class Select implements IExecutor {
 
         Relation rel = RelationLoader.loadRelation( nomRelation, dbPath );
 
-        // jointures
-//        rel = Joint.joints(rel, commands, inter);
+        List<String> splitQuery = Arrays.asList(commands);
+//         jointures
+        rel = JoinHandlerFactory
+                .build(splitQuery)
+                .handle(splitQuery, dbPath, rel);
+        Affichage.afficherDonnees(rel);
 
         // LIGNES <- WHERE
-        rel = SelectLines.selectWhere(commands, rel);
-
+        rel = SelectLines
+                .selectWhere(commands, rel);
 
         // COLONNES
-        return Projection.project(columnsName, rel);
+        return Projection
+                .project(columnsName, rel);
     }
 }

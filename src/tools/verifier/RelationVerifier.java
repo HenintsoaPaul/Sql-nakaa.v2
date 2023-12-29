@@ -1,7 +1,6 @@
 package tools.verifier;
 
 import tools.IVerifier;
-import tools.Funct;
 
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
@@ -59,9 +58,10 @@ public class RelationVerifier implements IVerifier {
 
     public static void isAllowedAttributType(String attrib) throws Exception {
 
-        if (allowedTypes.contains(attrib))
+        if (!allowedTypes.contains(attrib)) {
             throw new Exception( "Le type "+attrib+" n'existe pas!"+
                     " Les types existantes sont: "+
-                    String.join( ", ", allowedTypes) );
+                    String.join( ", ", allowedTypes)+ ".");
+        }
     }
 }

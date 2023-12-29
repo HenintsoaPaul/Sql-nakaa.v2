@@ -1,6 +1,7 @@
 package commands.executors.select;
 
 import commands.IExecutor;
+import commands.executors.select.where.SelectLines;
 import composants.relations.Attribut;
 import composants.relations.Relation;
 import exe.Affichage;

@@ -24,3 +24,6 @@ DATA TEST
     *          APIDIRO ( etu, vola ) AGNATY test VALUES ( Kabisa, 12 )
     *          APIDIRO ( vola ) AGNATY test VALUES ( 12 )
     *          APIDIRO ( etu ) AGNATY test VALUES ( 226 )
+    *     - vers biblio:
+    *          APIDIRO ( numero, debutEmprunt ) AGNATY biblio VALUES ( 2, 12-05-2015 )
+    *          APIDIRO ( numero, debutEmprunt ) AGNATY biblio VALUES ( 1, 20-03-2015 )

@@ -12,6 +12,7 @@ import tools.verifier.RelationVerifier;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Vector;
 
 public class Select implements IExecutor {
 
@@ -38,11 +39,16 @@ public class Select implements IExecutor {
         Relation rel = RelationLoader.loadRelation( nomRelation, dbPath );
 
         List<String> splitQuery = Arrays.asList(commands);
-//         jointures
+
+        // RELATIONS <- JOIN
         rel = JoinHandlerFactory
                 .build(splitQuery)
                 .handle(splitQuery, dbPath, rel);
+
         Affichage.afficherDonnees(rel);
+        Vector line1 = rel.getLignes().get(0);
+        for (Object data: line1)
+            System.out.println(data);
 
         // LIGNES <- WHERE
         rel = SelectLines

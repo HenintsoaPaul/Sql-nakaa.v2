@@ -7,30 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Ajout de data de test et mise a jour du fichier README.">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectColumns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectColumns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/where/SelectLines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/where/SelectWhere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exe/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Affichage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution />
@@ -145,7 +133,8 @@
       <workItem from="1702914182401" duration="56000" />
       <workItem from="1703703445202" duration="7344000" />
       <workItem from="1703851348312" duration="8421000" />
-      <workItem from="1703865409684" duration="4202000" />
+      <workItem from="1703865409684" duration="4667000" />
+      <workItem from="1703870112615" duration="482000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -211,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703869424449</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel.">
+      <option name="closed" value="true" />
+      <created>1703869700902</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703869700902</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +223,8 @@
     <MESSAGE value="Separation de la responsabilite de gestion du stockage des donnees dans une classe a part, autre que Sql_nakaa.java." />
     <MESSAGE value="Les requetes SELECT avec plusieurs predicats enchainnes mais non imbriques sont possibles et operationnels." />
     <MESSAGE value="Ajout de data de test et mise a jour du fichier README." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de data de test et mise a jour du fichier README." />
+    <MESSAGE value="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

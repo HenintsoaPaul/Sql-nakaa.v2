@@ -52,7 +52,8 @@ public class Projection implements IExecutor {
             attribs = relation.getAttributs(columnsName);
         }
 
-        String relationName = "["+String.join( ", ", columnsName )+"] from "+ relation.getNomRelation();
+        String relationName = "["+String.join( ", ", columnsName )+"] from "
+                + relation.getNomRelation();
         Relation result = new Relation(relationName, attribs);
 
         Vector<Vector> donnees = SelectLines.getAllLines(relation, columnsName);

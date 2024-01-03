@@ -7,9 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Pendant le test crossJoin, l'affichage est erronee si on fait la jointure de table avec de meme nom de certains colonnes. En essayant de resoudre cela, creation de la table biblio, mais une erreur survient lors d'une insert de donnee de type date dans cette derniere.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/parsers/LocalDateParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/parsers/LocalDateParser.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore.">
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composants/relations/Attribut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Attribut.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +137,9 @@
       <workItem from="1703703445202" duration="7344000" />
       <workItem from="1703851348312" duration="8421000" />
       <workItem from="1703865409684" duration="4667000" />
-      <workItem from="1703870112615" duration="1469000" />
+      <workItem from="1703870112615" duration="2603000" />
+      <workItem from="1703882293951" duration="599000" />
+      <workItem from="1704268918712" duration="3112000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -215,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703871169858</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore.">
+      <option name="closed" value="true" />
+      <created>1703871977000</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703871977000</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +246,8 @@
     <MESSAGE value="Ajout de data de test et mise a jour du fichier README." />
     <MESSAGE value="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel." />
     <MESSAGE value="Pendant le test crossJoin, l'affichage est erronee si on fait la jointure de table avec de meme nom de certains colonnes. En essayant de resoudre cela, creation de la table biblio, mais une erreur survient lors d'une insert de donnee de type date dans cette derniere." />
-    <option name="LAST_COMMIT_MESSAGE" value="Pendant le test crossJoin, l'affichage est erronee si on fait la jointure de table avec de meme nom de certains colonnes. En essayant de resoudre cela, creation de la table biblio, mais une erreur survient lors d'une insert de donnee de type date dans cette derniere." />
+    <MESSAGE value="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

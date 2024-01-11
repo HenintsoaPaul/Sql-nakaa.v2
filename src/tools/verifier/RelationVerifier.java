@@ -64,4 +64,13 @@ public class RelationVerifier implements IVerifier {
                     String.join( ", ", allowedTypes)+ ".");
         }
     }
+
+
+
+    public void verifyRelationsExistance(List<String> relationsName)
+            throws Exception {
+        for (String relName: relationsName) {
+            this.verifyExisting(relName);
+        }
+    }
 }

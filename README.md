@@ -11,6 +11,9 @@ Sql-nakaa : SGBD perso
 # Commandes:
 * ## MAMOROOGNA ~ CREATE:
         MAMOROOGNA TABLE t1 ( etu int, nom String )
+
+* ## DIVEK ~ DIVISION EUCLIDIENNE
+        DIVEK tab1 / tab2
   
 * ## ABOAY ~ SELECT:
         ABOAY ... AME t1

@@ -9,6 +9,8 @@ import tools.verifier.RelationVerifier;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RelationLoader implements ILoader {
     private String dbPath;
@@ -61,6 +63,14 @@ public class RelationLoader implements ILoader {
 
         String pathToDb = getDbPath();
         return loadRelation(nomRelation, pathToDb);
+    }
+    public static List<Relation> loadRelations(List<String> relationsName, String dbPath)
+            throws Exception {
+        List<Relation> relations = new ArrayList<>();
+        for (String relName: relationsName) {
+            relations.add(RelationLoader.loadRelation(relName, dbPath));
+        }
+        return relations;
     }
 
     @Override

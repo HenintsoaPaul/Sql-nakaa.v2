@@ -40,9 +40,18 @@ public class Select implements IExecutor {
         List<String> splitQuery = Arrays.asList(commands);
 
         // RELATIONS <- JOIN
-        rel = JoinHandlerFactory
-                .build(splitQuery)
-                .handle(splitQuery, dbPath, rel);
+        List<String> joinIndicators = Arrays.asList(new String[]{"x", "X", ",", "teta["});
+        for (int i = 0; i < joinIndicators.size(); i++) {
+            if (splitQuery.contains(joinIndicators.get(i))) {
+                rel = JoinHandlerFactory
+                        .build(splitQuery, rel)
+                        .join(splitQuery, dbPath, rel);
+//                System.out.printf("misy join");
+                break;
+            }
+        }
+
+//        Affichage.afficherDonnees(rel);
 
         // LIGNES <- WHERE
         rel = SelectLines

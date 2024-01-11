@@ -7,13 +7,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore.">
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinStrategy.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Probleme de cross join de table avec column de meme nom resolu.">
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/DivEuclid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/divEuclidProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Projection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataTest.md" beforeDir="false" afterPath="$PROJECT_DIR$/dataTest.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composants/relations/Attribut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Attribut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composants/relations/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Relation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +83,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;select&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;naturalJoin&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -139,7 +150,13 @@
       <workItem from="1703865409684" duration="4667000" />
       <workItem from="1703870112615" duration="2603000" />
       <workItem from="1703882293951" duration="599000" />
-      <workItem from="1704268918712" duration="3112000" />
+      <workItem from="1704268918712" duration="3248000" />
+      <workItem from="1704275012858" duration="1714000" />
+      <workItem from="1704706328655" duration="415000" />
+      <workItem from="1704711282653" duration="4790000" />
+      <workItem from="1704718807753" duration="5600000" />
+      <workItem from="1704731105966" duration="608000" />
+      <workItem from="1704973989139" duration="5561000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -229,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703871977000</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Probleme de cross join de table avec column de meme nom resolu.">
+      <option name="closed" value="true" />
+      <created>1704272086562</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704272086562</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +272,8 @@
     <MESSAGE value="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel." />
     <MESSAGE value="Pendant le test crossJoin, l'affichage est erronee si on fait la jointure de table avec de meme nom de certains colonnes. En essayant de resoudre cela, creation de la table biblio, mais une erreur survient lors d'une insert de donnee de type date dans cette derniere." />
     <MESSAGE value="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore." />
-    <option name="LAST_COMMIT_MESSAGE" value="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore." />
+    <MESSAGE value="Probleme de cross join de table avec column de meme nom resolu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Probleme de cross join de table avec column de meme nom resolu." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

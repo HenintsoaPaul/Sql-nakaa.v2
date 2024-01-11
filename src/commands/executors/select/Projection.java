@@ -1,6 +1,7 @@
 package commands.executors.select;
 
 import commands.IExecutor;
+import commands.executors.select.where.SelectLines;
 import composants.relations.Attribut;
 import composants.relations.Relation;
 import exe.Affichage;
@@ -51,7 +52,8 @@ public class Projection implements IExecutor {
             attribs = relation.getAttributs(columnsName);
         }
 
-        String relationName = "["+String.join( ", ", columnsName )+"] from "+ relation.getNomRelation();
+        String relationName = "["+String.join( ", ", columnsName )+"] from "
+                + relation.getNomRelation();
         Relation result = new Relation(relationName, attribs);
 
         Vector<Vector> donnees = SelectLines.getAllLines(relation, columnsName);

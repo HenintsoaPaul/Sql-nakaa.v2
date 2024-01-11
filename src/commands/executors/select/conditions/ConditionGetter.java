@@ -1,6 +1,6 @@
 package commands.executors.select.conditions;
 
-import commands.executors.select.SelectWhere;
+import commands.executors.select.where.SelectWhere;
 import composants.relations.Attribut;
 import composants.relations.Relation;
 import composants.relations.RelationOperator;

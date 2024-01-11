@@ -1,4 +1,4 @@
-package commands.executors.select;
+package commands.executors.select.where;
 
 import commands.executors.select.conditions.INumericalConditionVerifier;
 import commands.executors.select.conditions.conditionsVerifier.NumericalConditionVerifierBuilder;

@@ -9,14 +9,35 @@ import tools.verifier.RelationVerifier;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RelationLoader implements ILoader {
+    private String dbPath;
+
+    public String getDbPath() {
+        return dbPath;
+    }
+
+    public void setDbPath(String dbPath) {
+        if (dbPath == null) {
+            throw new IllegalArgumentException("ERROR: dbPath cannot be null!");
+        }
+        this.dbPath = dbPath;
+    }
+
+    public RelationLoader(String dbPath) {
+        setDbPath(dbPath);
+    }
+
+    public RelationLoader() {
+    }
 
     public static Relation loadRelation(String nomRelation, String pathToDb)
             throws Exception {
 
         String[] pathStrings = pathToDb.split("/");
-        String dbName = pathStrings[ pathStrings.length-1 ];
+        String dbName = pathStrings[pathStrings.length - 1];
 
         new BaseVerifier().verifyExisting(dbName);
         new RelationVerifier(pathToDb).verifyExisting(nomRelation);
@@ -25,8 +46,8 @@ public class RelationLoader implements ILoader {
         String fileName = pathToDb + "/relations/" + nomRelation + ".ser";
         try {
 
-            FileInputStream fileIn = new FileInputStream( fileName );
-            ObjectInputStream in = new ObjectInputStream( fileIn );
+            FileInputStream fileIn = new FileInputStream(fileName);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
             rel = (Relation) in.readObject();
 
             in.close();
@@ -36,6 +57,20 @@ public class RelationLoader implements ILoader {
             throw new RuntimeException(e);
         }
         return rel;
+    }
+    public Relation loadRelation(String nomRelation)
+            throws Exception {
+
+        String pathToDb = getDbPath();
+        return loadRelation(nomRelation, pathToDb);
+    }
+    public static List<Relation> loadRelations(List<String> relationsName, String dbPath)
+            throws Exception {
+        List<Relation> relations = new ArrayList<>();
+        for (String relName: relationsName) {
+            relations.add(RelationLoader.loadRelation(relName, dbPath));
+        }
+        return relations;
     }
 
     @Override

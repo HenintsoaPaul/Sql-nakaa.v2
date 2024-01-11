@@ -30,7 +30,7 @@ public class Attribut implements Serializable {
 
 
     // Setters
-    void setNomAttribut(String nom) throws Exception {
+    public void setNomAttribut(String nom) throws Exception {
         if ( nom == null || nom.isEmpty() )
             throw  new Exception("L'attribut doit toujours avoir" +
                     " un nom( != null && != '' )");

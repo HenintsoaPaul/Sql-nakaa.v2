@@ -1,28 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;">
-      <change afterPath="$PROJECT_DIR$/src/composants/relations/RelationOperator.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Probleme de cross join de table avec column de meme nom resolu.">
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/DivEuclid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/divEuclidProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectConditionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectLines.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/SelectWhere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataTest.md" beforeDir="false" afterPath="$PROJECT_DIR$/dataTest.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/composants/relations/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Relation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exe/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exe/Sql_nakaa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/Sql_nakaa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/Funct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Funct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/verifier/BaseVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/BaseVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution />
@@ -36,6 +46,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -64,8 +80,10 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;select&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;naturalJoin&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -74,6 +92,8 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/src/Main.java&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.20031923&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -123,7 +143,20 @@
       <workItem from="1702555722070" duration="348000" />
       <workItem from="1702556659511" duration="1279000" />
       <workItem from="1702816945228" duration="12914000" />
-      <workItem from="1702836770226" duration="4932000" />
+      <workItem from="1702836770226" duration="5596000" />
+      <workItem from="1702914182401" duration="56000" />
+      <workItem from="1703703445202" duration="7344000" />
+      <workItem from="1703851348312" duration="8421000" />
+      <workItem from="1703865409684" duration="4667000" />
+      <workItem from="1703870112615" duration="2603000" />
+      <workItem from="1703882293951" duration="599000" />
+      <workItem from="1704268918712" duration="3248000" />
+      <workItem from="1704275012858" duration="1714000" />
+      <workItem from="1704706328655" duration="415000" />
+      <workItem from="1704711282653" duration="4790000" />
+      <workItem from="1704718807753" duration="5600000" />
+      <workItem from="1704731105966" duration="608000" />
+      <workItem from="1704973989139" duration="5561000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -149,7 +182,79 @@
       <option name="project" value="LOCAL" />
       <updated>1702300754322</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="select with multiple predicats in only one query. The query don't induce errors but still unverified in all real cases of use with true data.">
+      <option name="closed" value="true" />
+      <created>1702842282055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702842282055</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajout des fichiers uncommitted.">
+      <option name="closed" value="true" />
+      <created>1702842356634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702842356634</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Separation de la responsabilite de gestion du stockage des donnees dans une classe a part, autre que Sql_nakaa.java.">
+      <option name="closed" value="true" />
+      <created>1703705627829</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703705627829</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Les requetes SELECT avec plusieurs predicats enchainnes mais non imbriques sont possibles et operationnels.">
+      <option name="closed" value="true" />
+      <created>1703710735173</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703710735173</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ajout de data de test et mise a jour du fichier README.">
+      <option name="closed" value="true" />
+      <created>1703869424449</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703869424449</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel.">
+      <option name="closed" value="true" />
+      <created>1703869700902</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703869700902</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Pendant le test crossJoin, l'affichage est erronee si on fait la jointure de table avec de meme nom de certains colonnes. En essayant de resoudre cela, creation de la table biblio, mais une erreur survient lors d'une insert de donnee de type date dans cette derniere.">
+      <option name="closed" value="true" />
+      <created>1703871169858</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703871169858</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore.">
+      <option name="closed" value="true" />
+      <created>1703871977000</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703871977000</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Probleme de cross join de table avec column de meme nom resolu.">
+      <option name="closed" value="true" />
+      <created>1704272086562</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704272086562</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +264,19 @@
     <MESSAGE value="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes." />
     <MESSAGE value="Insert operationnel. On n'a plus besoin de preciser le type de donner a inserer lors d'une commande insert." />
     <MESSAGE value="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="SELECT where &lt;only one predicat&gt;: works. As NOT &lt;condition&gt;" />
+    <MESSAGE value="select with multiple predicats in only one query. The query don't induce errors but still unverified in all real cases of use with true data." />
+    <MESSAGE value="Ajout des fichiers uncommitted." />
+    <MESSAGE value="Separation de la responsabilite de gestion du stockage des donnees dans une classe a part, autre que Sql_nakaa.java." />
+    <MESSAGE value="Les requetes SELECT avec plusieurs predicats enchainnes mais non imbriques sont possibles et operationnels." />
+    <MESSAGE value="Ajout de data de test et mise a jour du fichier README." />
+    <MESSAGE value="Ajout des class necessaires a la realisation de Jointures. CrossJoin operationnel." />
+    <MESSAGE value="Pendant le test crossJoin, l'affichage est erronee si on fait la jointure de table avec de meme nom de certains colonnes. En essayant de resoudre cela, creation de la table biblio, mais une erreur survient lors d'une insert de donnee de type date dans cette derniere." />
+    <MESSAGE value="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore." />
+    <MESSAGE value="Probleme de cross join de table avec column de meme nom resolu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Probleme de cross join de table avec column de meme nom resolu." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

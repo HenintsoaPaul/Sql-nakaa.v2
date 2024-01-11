@@ -8,7 +8,8 @@ import java.util.Vector;
 public class Affichage {
     final static int MAX_COL_LONG = 20, MIN_COL_LONG = 1;
     @SuppressWarnings("unchecked")
-    public static void afficherDonnees(Relation rel) throws Exception {
+    public static void afficherDonnees(Relation rel)
+            throws Exception {
         Attribut[] attribs = rel.getAttributs();
         int lenAtb = attribs.length;
 
@@ -81,9 +82,12 @@ public class Affichage {
 
         if (cellule == null) {
             celluleString = "null";
-        } else if (cellule instanceof Boolean) {
-            celluleString = (Boolean)cellule ? "vrai" : "faux";
-        } else {
+        }
+        else if (cellule instanceof Boolean) {
+            celluleString = (Boolean)cellule ?
+                    "vrai" : "faux";
+        }
+        else {
             celluleString = cellule.toString();
         }
 

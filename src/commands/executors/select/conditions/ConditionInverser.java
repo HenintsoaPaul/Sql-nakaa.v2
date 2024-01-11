@@ -1,10 +1,10 @@
 package commands.executors.select.conditions;
 
 import java.util.HashMap;
+import java.util.List;
 
-public abstract class ConditionProcessor {
-
-    static String[] getConditionInverse( String[] condition ) {
+public abstract class ConditionInverser {
+    static String[] getConditionInverse(String[] condition) {
 
         HashMap<String, String> operators = new HashMap<>();
         operators.put("==", "<>");
@@ -22,11 +22,11 @@ public abstract class ConditionProcessor {
         return result;
     }
 
-    public static void inverseAllTsyConditions(String[][] conditions) {
-
-        for ( int i = 0; i < conditions.length; i++ )
-            if ( conditions[i].length == 4 && conditions[i][0].equalsIgnoreCase("tsy") )
-                conditions[i] = getConditionInverse( conditions[i] );
+    public static void inverseAllTsyConditions(List<String[]> conditions) {
+        for ( int i = 0; i < conditions.size(); i++ ) {
+            String[] cond = conditions.get(i);
+            if (cond.length == 4 && cond[0].equalsIgnoreCase("tsy"))
+                conditions.set(i, getConditionInverse(cond));
+        }
     }
-
 }

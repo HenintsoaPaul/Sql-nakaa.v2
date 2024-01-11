@@ -2,6 +2,7 @@ package commands.executors;
 
 import commands.IExecutor;
 import commands.executors.create.Create;
+import commands.executors.divEuclidienne.DivEuclid;
 import commands.executors.drop.Drop;
 import commands.executors.insert.Insert;
 import commands.executors.select.Projection;
@@ -19,6 +20,7 @@ public abstract class ExecutorBuilder {
         executors.put("APIDIRO", new Insert());
         executors.put("ABOAY", new Select());
         executors.put("PROJETEO", new Projection());
+        executors.put("DIVEK", new DivEuclid());
     }
 
 

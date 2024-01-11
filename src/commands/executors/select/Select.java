@@ -1,12 +1,17 @@
 package commands.executors.select;
 
 import commands.IExecutor;
+import commands.executors.select.join.JoinHandlerFactory;
+import commands.executors.select.where.SelectLines;
 import composants.relations.Relation;
 import exe.Affichage;
 import exe.Interpreter;
 import tools.Funct;
 import tools.loaders.RelationLoader;
 import tools.verifier.RelationVerifier;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Select implements IExecutor {
 
@@ -32,14 +37,30 @@ public class Select implements IExecutor {
 
         Relation rel = RelationLoader.loadRelation( nomRelation, dbPath );
 
-        // jointures
-//        rel = Joint.joints(rel, commands, inter);
+        List<String> splitQuery = Arrays.asList(commands);
+
+        // RELATIONS <- JOIN
+        List<String> joinIndicators = Arrays.asList(new String[]{"x", "X", ",", "teta["});
+        for (int i = 0; i < joinIndicators.size(); i++) {
+            if (splitQuery.contains(joinIndicators.get(i))) {
+                rel = JoinHandlerFactory
+                        .build(splitQuery, rel)
+                        .join(splitQuery, dbPath, rel);
+//                System.out.printf("misy join");
+                break;
+            }
+        }
+
+//        Affichage.afficherDonnees(rel);
 
         // LIGNES <- WHERE
-        SelectLines.selectWhere(commands, rel);
-
+        rel = SelectLines
+                .selectWhere(commands, rel);
 
         // COLONNES
-        return Projection.project(columnsName, rel);
+        rel = Projection
+                .project(columnsName, rel);
+
+        return rel;
     }
 }

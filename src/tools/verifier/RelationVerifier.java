@@ -1,21 +1,25 @@
 package tools.verifier;
 
 import tools.IVerifier;
-import tools.Funct;
 
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 public class RelationVerifier implements IVerifier {
+    private static final List<String> allowedTypes =
+            Arrays.asList("int", "double", "String", "boolean", "date", "dateHeure");
 
-    private static final String[] allowedTypes =
-            { "int", "double", "String", "boolean", "date", "dateHeure" };
-
-    String pathToDb; // data/first_db
+    String pathToDb; // /home/tsoa/.../data/first_db
     public RelationVerifier(String pathToDb) {
         this.pathToDb = pathToDb;
+    }
+    private String getDbName() {
+        String[] temp = pathToDb.split("/");
+        return temp[temp.length - 1];
     }
 
 
@@ -47,16 +51,26 @@ public class RelationVerifier implements IVerifier {
 
         if ( !isExisting( nomRelation ) )
             throw new Exception("Azafady nama fa tena tsy mi-existe ame Database \""
-                    + pathToDb.split("/")[1] +"\" io Relation \"" +nomRelation+"\" io!");
+                    + getDbName() + "\" io Relation \"" + nomRelation + "\" io!");
     }
 
 
 
     public static void isAllowedAttributType(String attrib) throws Exception {
 
-        if (Funct.isInTabString(allowedTypes, attrib))
+        if (!allowedTypes.contains(attrib)) {
             throw new Exception( "Le type "+attrib+" n'existe pas!"+
                     " Les types existantes sont: "+
-                    String.join( ", ", allowedTypes) );
+                    String.join( ", ", allowedTypes)+ ".");
+        }
+    }
+
+
+
+    public void verifyRelationsExistance(List<String> relationsName)
+            throws Exception {
+        for (String relName: relationsName) {
+            this.verifyExisting(relName);
+        }
     }
 }

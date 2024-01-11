@@ -144,6 +144,14 @@ public class Relation implements Serializable, RelationalModel {
 
         return result;
     }
+    public int[] getIndexAttribs(Attribut[] attributs)
+            throws Exception {
+        int[] tab = new int[attributs.length];
+        for (int i = 0; i < tab.length; i++) {
+            tab[i] = getIndexAttrib(attributs[i].getNomAttribut());
+        }
+        return tab;
+    }
     public Class getClassOfAttrib(String nomAttribut) throws Exception {
         String type = this.getTypeAttribut(nomAttribut);
         return this.classAttrib(type);

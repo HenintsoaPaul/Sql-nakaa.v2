@@ -5,6 +5,7 @@ import composants.relations.Relation;
 
 import java.util.Vector;
 
+@SuppressWarnings("rawtypes")
 public class Affichage {
     final static int MAX_COL_LONG = 20, MIN_COL_LONG = 1;
     @SuppressWarnings("unchecked")

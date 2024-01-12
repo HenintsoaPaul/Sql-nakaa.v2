@@ -22,10 +22,9 @@ public class DropRelation extends Drop{
         try {
 
             if (Files.deleteIfExists(path))
-                LOG = "Yessss, voafafa lay Relation '"+ nomRelation +"'!";
+                LOG = "Yesss, voafafa lay Relation '"+ nomRelation +"'!";
         } catch (Exception e) {
 
-            e.printStackTrace();
             LOG = "Erreur lors de FAFAY TABLE "+nomRelation;
         }
         System.out.println( LOG ) ;

@@ -13,7 +13,7 @@ public class RelationVerifier implements IVerifier {
     private static final List<String> allowedTypes =
             Arrays.asList("int", "double", "String", "boolean", "date", "dateHeure");
 
-    String pathToDb; // /home/tsoa/.../data/first_db
+    final String pathToDb; // /home/tsoa/.../data/first_db
     public RelationVerifier(String pathToDb) {
         this.pathToDb = pathToDb;
     }

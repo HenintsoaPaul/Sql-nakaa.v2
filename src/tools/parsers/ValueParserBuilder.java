@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public abstract class ValueParserBuilder {
 
-    static HashMap<String, IValueParser> parsers = new HashMap<>();
+    static final HashMap<String, IValueParser> parsers = new HashMap<>();
 
     static {
         parsers.put("String", new StringParser());

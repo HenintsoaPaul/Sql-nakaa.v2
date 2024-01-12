@@ -2,7 +2,7 @@ package commands.executors;
 
 import commands.IExecutor;
 import commands.executors.create.Create;
-import commands.executors.divEuclidienne.DivEuclid;
+import commands.executors.divEuclidienne.DivEuclidienne;
 import commands.executors.drop.Drop;
 import commands.executors.insert.Insert;
 import commands.executors.select.Projection;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public abstract class ExecutorBuilder {
 
-    static HashMap<String, IExecutor> executors = new HashMap<>();
+    static final HashMap<String, IExecutor> executors = new HashMap<>();
 
     static {
         executors.put("MAMOROOGNA", new Create());
@@ -20,7 +20,7 @@ public abstract class ExecutorBuilder {
         executors.put("APIDIRO", new Insert());
         executors.put("ABOAY", new Select());
         executors.put("PROJETEO", new Projection());
-        executors.put("DIVEK", new DivEuclid());
+        executors.put("DIVEK", new DivEuclidienne());
     }
 
 

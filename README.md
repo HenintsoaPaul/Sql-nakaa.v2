@@ -42,7 +42,7 @@ Sql-nakaa : SGBD perso
                       ABOAY aby AME t1 , t2
                       ABOAY aby AME t1 , t2 , t3
               - #### tetaJoin:
-              N.B. : tetaCond [valueCol1 operator valueCol2] will be a numerical operation:
+              ##### N.B. : tetaCond "teta[ valueCol1 operator valueCol2 ]" will be a numerical operation:
               - maybe simple: 
                 - columnA == columnB
                 - columnA < columnB
@@ -52,4 +52,4 @@ Sql-nakaa : SGBD perso
                 - columnA < columnB * 12
                 - 2 + columnA - 15 / 5 <> 1 - columnB * 2 
 
-                          ABOAY aby AME t1 teta[t1.columnA <tetaCond> t2.columnB] t2
+                          ABOAY aby AME t1 teta[ t1.colA <tetaCond> t2.colB ] t2

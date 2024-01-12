@@ -6,10 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 
 public abstract class JoinHandlerFactory {
-    static HashMap<String, JoinHandler> joinHandlers = new HashMap<>();
+    static final HashMap<String, JoinHandler> joinHandlers = new HashMap<>();
     static {
         joinHandlers.put("x", new CrossJoinHandler());
         joinHandlers.put(",", new NaturalJoinHandler());
+        joinHandlers.put("teta[", new TetaJoinHandler());
     }
 
     public static JoinHandler build(List<String> splitQuery, Relation relationWhere) {
@@ -17,6 +18,8 @@ public abstract class JoinHandlerFactory {
             return joinHandlers.get("x");
         } else if (splitQuery.contains(",")) {
             return joinHandlers.get(",");
+        } else if (splitQuery.contains("teta[")) {
+            return joinHandlers.get("teta[");
         }
         return new NoJoinHandler(relationWhere);
     }

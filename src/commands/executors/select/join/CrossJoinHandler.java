@@ -2,14 +2,13 @@ package commands.executors.select.join;
 
 import composants.relations.Relation;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class CrossJoinHandler extends JoinHandler {
     @Override
-    public Relation handle(List<Relation> relations)
+    public Relation handle(List<Relation> relations, List<String> splitQuery)
             throws Exception {
         /*
          query be like:
@@ -22,18 +21,7 @@ public class CrossJoinHandler extends JoinHandler {
     }
 
      List<String> getRelationsName(List<String> splitQuery) {
-        List<String> relationsName = new ArrayList<>();
-        int ind = splitQuery.contains("x") ?
-                splitQuery.indexOf("x") : splitQuery.indexOf("X");
-
-        for (int i = ind; i < splitQuery.size(); i++) {
-            String str = splitQuery.get(i);
-            if (str.equalsIgnoreCase("x")) {
-                relationsName.add(splitQuery.get(i+1));
-            }
-        }
-
-        return relationsName;
+        return getRelationsNames(splitQuery, "x");
     }
 
     public Relation processCrossJoin(List<Relation> relations)

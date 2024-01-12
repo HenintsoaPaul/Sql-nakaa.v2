@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class DivekProcessor {
 
     public DivekProcessor() {}

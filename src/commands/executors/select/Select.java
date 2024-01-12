@@ -40,13 +40,13 @@ public class Select implements IExecutor {
         List<String> splitQuery = Arrays.asList(commands);
 
         // RELATIONS <- JOIN
-        List<String> joinIndicators = Arrays.asList(new String[]{"x", "X", ",", "teta["});
-        for (int i = 0; i < joinIndicators.size(); i++) {
-            if (splitQuery.contains(joinIndicators.get(i))) {
+        List<String> joinIndicators = Arrays.asList("x", "X", ",", "teta[");
+        for (String joinIndicator : joinIndicators) {
+            if (splitQuery.contains(joinIndicator)) {
+                System.out.println("Join type: " + joinIndicator);
                 rel = JoinHandlerFactory
                         .build(splitQuery, rel)
                         .join(splitQuery, dbPath, rel);
-//                System.out.printf("misy join");
                 break;
             }
         }

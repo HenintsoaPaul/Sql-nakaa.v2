@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public interface ISaver {
 
+     @SuppressWarnings("unused")
      void save(RelationalModel relationalModel, Interpreter interpreter)
             throws IOException;
 }

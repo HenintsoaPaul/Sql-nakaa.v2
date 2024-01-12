@@ -5,14 +5,14 @@ import composants.relations.Relation;
 import java.util.List;
 
 public class NoJoinHandler extends JoinHandler{
-    Relation relationWhere;
+    final Relation relationWhere;
 
     public NoJoinHandler(Relation relationWhere) {
         this.relationWhere = relationWhere;
     }
 
     @Override
-    public Relation handle(List<Relation> relations) {
+    public Relation handle(List<Relation> relations, List<String> splitQuery) {
         return this.relationWhere;
     }
 

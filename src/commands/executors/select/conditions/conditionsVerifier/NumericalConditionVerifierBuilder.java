@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public abstract class NumericalConditionVerifierBuilder {
 
-    static HashMap<String, INumericalConditionVerifier> verifiers = new HashMap<>();
+    static final HashMap<String, INumericalConditionVerifier> verifiers = new HashMap<>();
 
     static {
         verifiers.put("==", new EqualVerifier());

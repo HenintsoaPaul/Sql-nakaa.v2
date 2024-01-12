@@ -20,15 +20,33 @@ public abstract class JoinHandler {
         renameIdenticalAttributs(relations);
 
         try {
-            return handle(relations);
+            return handle(relations, splitQuery);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    public abstract Relation handle(List<Relation> relations)
+
+    public abstract Relation handle(List<Relation> relations, List<String> splitQuery)
             throws Exception;
 
     abstract List<String> getRelationsName(List<String> splitQuery);
+    List<String> getRelationsNames(List<String> splitQuery, String joinIdentifier) {
+        // on suppose joinIdentifier --> lowerCase
+
+        List<String> relationsName = new ArrayList<>();
+        int ind = splitQuery.contains(joinIdentifier) ?
+                splitQuery.indexOf(joinIdentifier) :
+                splitQuery.indexOf(joinIdentifier.toUpperCase());
+
+        for (int i = ind; i < splitQuery.size(); i++) {
+            String str = splitQuery.get(i);
+            if (str.equalsIgnoreCase(joinIdentifier)) {
+                relationsName.add(splitQuery.get(i+1));
+            }
+        }
+
+        return relationsName;
+    }
 
     private List<Relation> verifyExistanceAndLoadRelations(List<String> relationsName, String dbPath, Relation relationWhere) {
         RelationVerifier verifier = new RelationVerifier(dbPath);
@@ -66,24 +84,21 @@ public abstract class JoinHandler {
 
                 String nomCurAtb = curAtb.getNomAttribut();
                 AtomicBoolean thereIsSimilar = new AtomicBoolean(false);
-                otherAttributs.forEach(listAtb -> {
+                otherAttributs.forEach(listAtb -> listAtb.forEach(othAtb -> {
 
-                    listAtb.forEach(othAtb -> {
+                    String nomOthAtb = othAtb.getNomAttribut();
+                    if (nomCurAtb.equals(nomOthAtb)) {
 
-                        String nomOthAtb = othAtb.getNomAttribut();
-                        if (nomCurAtb.equals(nomOthAtb)) {
-
-                            thereIsSimilar.set(true);
-                            try {
-                                int index = otherAttributs.indexOf(listAtb) + 1;
-                                othAtb.setNomAttribut("R" + index + "." + nomOthAtb);
-                            } catch (Exception e) {
-                                throw new RuntimeException(e);
-                            }
+                        thereIsSimilar.set(true);
+                        try {
+                            int index = otherAttributs.indexOf(listAtb) + 1;
+                            othAtb.setNomAttribut("R" + index + "." + nomOthAtb);
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
                         }
-                    });
-                });
-                if (thereIsSimilar.get() == true) {
+                    }
+                }));
+                if (thereIsSimilar.get()) {
                     try {
                         curAtb.setNomAttribut("R" + finalI + "." + nomCurAtb);
                     } catch (Exception e) {

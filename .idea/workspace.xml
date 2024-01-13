@@ -8,25 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Refactorisation du code.">
-      <change afterPath="$PROJECT_DIR$/src/composants/Predicat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/Limit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataTest.md" beforeDir="false" afterPath="$PROJECT_DIR$/dataTest.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/INumericalConditionVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/INumericalConditionVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/DifferenceVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/DifferenceVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/EqualVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/EqualVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InfEqualVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InfEqualVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InferiorVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/InferiorVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SupEqualVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SupEqualVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SuperiorVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/conditionsVerifier/SuperiorVerifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/where/SelectWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/where/SelectWhere.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +64,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -94,7 +79,7 @@
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/src/Main.java",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.folding",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "settings.editor.splitter.proportion": "0.20031923",
     "vue.rearranger.settings.migration": "true"
   }
@@ -119,6 +104,13 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-a9dfd5e7" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -163,6 +155,9 @@
       <workItem from="1704999828546" duration="2978000" />
       <workItem from="1705041280788" duration="6083000" />
       <workItem from="1705058984674" duration="7643000" />
+      <workItem from="1705164821978" duration="674000" />
+      <workItem from="1705166308627" duration="493000" />
+      <workItem from="1705167534232" duration="2260000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />

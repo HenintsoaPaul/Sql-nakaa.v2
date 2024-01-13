@@ -16,8 +16,19 @@ todo GESTION PARANTHESES:
     - get all parantheses
     - execute en fonction priorite paranthese
     exemple:
-        * from:
-        select * from t1 , ( t2 , t4 ) ,t3
+        * CASE from:
+        ---
+        select * from
+            tab1 ,
+            ( select * from t2 where t2.A < 25 ) ,
+            t3 ,
+            (
+                ( select * from t5 where t5.A < 25 ) x
+                (
+                    ( select * from t4 ) teta[ t4.colN == t6.colK ]
+                    t6
+            )
+                    ---
         -> ALGO:
             1- on prend la requete
             2- on split
@@ -31,4 +42,9 @@ todo GESTION PARANTHESES:
                 execution de la requete en une seule fois
 
              < mety afaka atao recurssive io zvt io ngambany >
+
+
+    select * from
+        ( select * from tab1 where colA == 12 ) ,
+        tab2 ;
  */

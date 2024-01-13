@@ -43,7 +43,7 @@ public class Select implements IExecutor {
         List<String> joinIndicators = Arrays.asList("x", "X", ",", "teta[");
         for (String joinIndicator : joinIndicators) {
             if (splitQuery.contains(joinIndicator)) {
-                System.out.println("Join type: " + joinIndicator);
+//                System.out.println("Join type: " + joinIndicator);
                 rel = JoinHandlerFactory
                         .build(splitQuery, rel)
                         .join(splitQuery, dbPath, rel);
@@ -51,15 +51,14 @@ public class Select implements IExecutor {
             }
         }
 
-//        Affichage.afficherDonnees(rel);
-
         // LIGNES <- WHERE
-        rel = SelectLines
-                .selectWhere(commands, rel);
+        rel = SelectLines.selectWhere(commands, rel);
 
         // COLONNES
-        rel = Projection
-                .project(columnsName, rel);
+        rel = Projection.project(columnsName, rel);
+
+        // LIMIT
+        Limit.handleLimit(splitQuery, rel);
 
         return rel;
     }

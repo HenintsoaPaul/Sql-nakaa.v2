@@ -30,21 +30,10 @@ todo GESTION PARANTHESES:
             )
                     ---
         -> ALGO:
-            1- on prend la requete
-            2- on split
-            3- verification parentheses correctes
-            4-1- En presence de parenth dans la requete
-                a- on la divise en plusieurs sous-requete
-                b- on les ranges par priorites en fonction des parenth
-                c- on les executes dans l'ordre
-                d- le resultat de chq sous-requete devient un parametre du requete parent
-            4-2- Sinon
-                execution de la requete en une seule fois
-
-             < mety afaka atao recurssive io zvt io ngambany >
+            -
 
 
     select * from
         ( select * from tab1 where colA == 12 ) ,
-        tab2 ;
+        tab2
  */

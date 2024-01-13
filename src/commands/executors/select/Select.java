@@ -10,8 +10,10 @@ import tools.Funct;
 import tools.loaders.RelationLoader;
 import tools.verifier.RelationVerifier;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class Select implements IExecutor {
 
@@ -39,6 +41,16 @@ public class Select implements IExecutor {
 
         List<String> splitQuery = Arrays.asList(commands);
 
+        // verification des parentheses
+        verifyParentheses(splitQuery);
+
+        // on prend les indices des parentheses
+        List<List<Integer>> indexesParentheses = getIndexesParentheses(splitQuery);
+        for (List<Integer> pair : indexesParentheses) {
+            System.out.println(pair.get(0) + ";" + pair.get(1));
+            System.out.println("---");
+        }
+
         // RELATIONS <- JOIN
         List<String> joinIndicators = Arrays.asList("x", "X", ",", "teta[");
         for (String joinIndicator : joinIndicators) {
@@ -61,5 +73,45 @@ public class Select implements IExecutor {
         Limit.handleLimit(splitQuery, rel);
 
         return rel;
+    }
+
+    private static List<List<Integer>> getIndexesParentheses(List<String> splitQuery) {
+        List<List<Integer>> list = new ArrayList<>();
+        Stack<Integer> pile = new Stack<>();
+        for (int i = 0; i < splitQuery.size(); i ++) {
+            String str = splitQuery.get(i);
+            if (str.equals("(")) {
+                pile.push(i);
+            }
+            else if (str.equals(")")) {
+                List<Integer> pair = new ArrayList<>(2);
+                pair.add(pile.pop());
+                pair.add(i);
+                list.add(pair);
+            }
+        }
+        return list;
+    }
+
+    private static void verifyParentheses(List<String> splitQuery) {
+        int verify = 0;
+        for (String str : splitQuery) {
+            if (verify < 0) {
+                throw new RuntimeException("Misy parenthese(s) fermante(s) tsy manana ouvrante quelque part name!");
+            }
+
+            if (str.equals("(")) {
+                verify ++;
+            }
+            else if (str.equals(")")) {
+                verify --;
+            }
+        }
+        if (verify > 0) {
+            throw new RuntimeException("Misy parenthese(s) ouvrante(s) tsy mihidy quelque part nama!");
+        }
+        else if (verify < 0) {
+            throw new RuntimeException("Misy parenthese(s) fermante(s) tsy mihidy quelque part nama!");
+        }
     }
 }

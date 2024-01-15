@@ -23,4 +23,8 @@ public abstract class JoinHandlerFactory {
         }
         return new NoJoinHandler(relationWhere);
     }
+
+    public static JoinHandler build(String joinIdentifier) {
+        return joinHandlers.get(joinIdentifier);
+    }
 }

@@ -108,4 +108,10 @@ public abstract class JoinHandler {
             });
         }
     }
+
+
+
+
+    public abstract Relation joinTwoRelations(Relation relation1, Relation relation2)
+            throws Exception;
 }

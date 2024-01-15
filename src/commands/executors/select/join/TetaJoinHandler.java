@@ -4,6 +4,7 @@ import composants.Predicat;
 import composants.relations.Relation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
@@ -83,5 +84,12 @@ public class TetaJoinHandler extends JoinHandler {
     @Override
     List<String> getRelationsName(List<String> splitQuery) {
         return getRelationsNames(splitQuery, "]");
+    }
+
+    @Override
+    public Relation joinTwoRelations(Relation relation1, Relation relation2)
+            throws Exception {
+        List<Relation> relations = Arrays.asList(relation1, relation2);
+        return processCrossJoin(relations);
     }
 }

@@ -44,4 +44,4 @@ DATA TEST
   APIDIRO ( idClient, nom, vola, age ) AGNATY banque VALUES ( 3, Hawks, 450, 24 )
 
 * teta join:
-  aboay aby ame test teta[ d ] test2 teta[ d ] test4
+  aboay aby ame test teta[ colA == colB ] test2 x test4

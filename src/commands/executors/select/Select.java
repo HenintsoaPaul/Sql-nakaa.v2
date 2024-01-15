@@ -30,10 +30,12 @@ public class Select implements IExecutor {
     public static Relation select(String[] commands, Interpreter inter)
             throws Exception {
 
-        String dbPath = inter.getDbPath();
-        String nomRelation = Funct.getNomRelation( commands, "AME" );
+        // ---
+        new Select2().execute(commands, inter);
+        // ---
 
-        String[] columnsName = SelectColumns.getColumnsName(commands);
+        String dbPath = inter.getDbPath(),
+                nomRelation = Funct.getNomRelation( commands, "AME" );
 
         new RelationVerifier(dbPath).verifyExisting( nomRelation );
 
@@ -51,11 +53,17 @@ public class Select implements IExecutor {
             System.out.println("---");
         }
 
+        // on regroupe tous les string dans des parentheses
+        List<List<String>> strInParentheses = getStrInParentheses(splitQuery, indexesParentheses);
+        for (List<String> sublist : strInParentheses) {
+            for (String str : sublist) System.out.print(str + ";");
+            System.out.println("\n---");
+        }
+
         // RELATIONS <- JOIN
         List<String> joinIndicators = Arrays.asList("x", "X", ",", "teta[");
         for (String joinIndicator : joinIndicators) {
             if (splitQuery.contains(joinIndicator)) {
-//                System.out.println("Join type: " + joinIndicator);
                 rel = JoinHandlerFactory
                         .build(splitQuery, rel)
                         .join(splitQuery, dbPath, rel);
@@ -67,12 +75,26 @@ public class Select implements IExecutor {
         rel = SelectLines.selectWhere(commands, rel);
 
         // COLONNES
+        String[] columnsName = SelectColumns.getColumnsName(commands);
         rel = Projection.project(columnsName, rel);
 
         // LIMIT
         Limit.handleLimit(splitQuery, rel);
 
         return rel;
+    }
+
+    private static List<List<String>> getStrInParentheses(List<String> splitQuery, List<List<Integer>> indexesParentheses) {
+        List<List<String>> list = new ArrayList<>();
+        for (List<Integer> pair : indexesParentheses) {
+            List<String> sublist = new ArrayList<>();
+            int indexOuvert = pair.get(0);
+            for (int i = indexOuvert + 1; i < pair.get(1); i++) {
+                sublist.add(splitQuery.get(i));
+            }
+            list.add(sublist);
+        }
+        return list;
     }
 
     private static List<List<Integer>> getIndexesParentheses(List<String> splitQuery) {

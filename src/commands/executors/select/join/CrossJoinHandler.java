@@ -2,6 +2,7 @@ package commands.executors.select.join;
 
 import composants.relations.Relation;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
@@ -22,6 +23,13 @@ public class CrossJoinHandler extends JoinHandler {
 
      List<String> getRelationsName(List<String> splitQuery) {
         return getRelationsNames(splitQuery, "x");
+    }
+
+    @Override
+    public Relation joinTwoRelations(Relation relation1, Relation relation2)
+            throws Exception {
+        List<Relation> relations = Arrays.asList(relation1, relation2);
+        return processCrossJoin(relations);
     }
 
     public Relation processCrossJoin(List<Relation> relations)

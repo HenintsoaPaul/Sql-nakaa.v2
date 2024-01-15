@@ -9,31 +9,14 @@ public class Main {
 /*
 
 todo GESTION PARANTHESES:
-    - toerana misy parantheses "SELECT ...":
+    - toerana misy parentheses "SELECT ...":
         - WHERE
         - FROM
-    - verification: parantheses mety
-    - get all parantheses
-    - execute en fonction priorite paranthese
+    - verification: parentheses mety
+    - get all parentheses
+    - execute en fonction priorite parentheses
     exemple:
         * CASE from:
         ---
-        select * from
-            tab1 ,
-            ( select * from t2 where t2.A < 25 ) ,
-            t3 ,
-            (
-                ( select * from t5 where t5.A < 25 ) x
-                (
-                    ( select * from t4 ) teta[ t4.colN == t6.colK ]
-                    t6
-            )
-                    ---
-        -> ALGO:
-            -
-
-
-    select * from
-        ( select * from tab1 where colA == 12 ) ,
-        tab2
+        aboay aby ame test x ( ( select * from tab1 ) x tab2 ) x tab3
  */

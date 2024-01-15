@@ -7,10 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Limit operationnel sur un query simple.">
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Localisation des indices de toutes les parentheses dans un query.">
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/ArgJoin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/Select2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataTest.md" beforeDir="false" afterPath="$PROJECT_DIR$/dataTest.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +57,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -78,7 +85,7 @@
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/src/Main.java",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
     "settings.editor.splitter.proportion": "0.20031923",
     "vue.rearranger.settings.migration": "true"
   }
@@ -156,7 +163,8 @@
       <workItem from="1705058984674" duration="7643000" />
       <workItem from="1705164821978" duration="674000" />
       <workItem from="1705166308627" duration="493000" />
-      <workItem from="1705167534232" duration="6088000" />
+      <workItem from="1705167534232" duration="13770000" />
+      <workItem from="1705314658986" duration="5913000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -286,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705170278522</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Localisation des indices de toutes les parentheses dans un query.">
+      <option name="closed" value="true" />
+      <created>1705173828397</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1705173828397</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +324,8 @@
     <MESSAGE value="Division euclidienne operationnel" />
     <MESSAGE value="Refactorisation du code." />
     <MESSAGE value="Limit operationnel sur un query simple." />
-    <option name="LAST_COMMIT_MESSAGE" value="Limit operationnel sur un query simple." />
+    <MESSAGE value="Localisation des indices de toutes les parentheses dans un query." />
+    <option name="LAST_COMMIT_MESSAGE" value="Localisation des indices de toutes les parentheses dans un query." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

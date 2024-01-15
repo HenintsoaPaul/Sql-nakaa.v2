@@ -4,7 +4,6 @@ import commands.executors.select.where.SelectWhere;
 import composants.relations.Attribut;
 import composants.relations.Relation;
 import composants.relations.RelationOperator;
-import exe.Affichage;
 
 import java.util.*;
 
@@ -113,7 +112,7 @@ public abstract class ConditionGetter {
         Relation temp = sep.equalsIgnoreCase("ary") ?
                 RelationOperator.intersection(rel1, rel2) :
                 RelationOperator.union(rel1, rel2);
-        Affichage.afficherDonnees(temp);
+//        Affichage.afficherDonnees(temp);
 
         // delete the old relations rel1 and rel2 from the list
         relationsFromConditions.remove(indexSep+1);

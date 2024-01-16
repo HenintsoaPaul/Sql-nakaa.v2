@@ -69,6 +69,9 @@ public class Interpreter {
             if (firstWord.equalsIgnoreCase("VELOMA")) {
                 toContinue = false;
             }
+            else {
+                System.out.println("Commande inconnu bro! Andramo hoe: 'help'");
+            }
         }
         catch (Exception e) {
 

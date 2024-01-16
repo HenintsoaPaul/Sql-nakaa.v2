@@ -30,10 +30,6 @@ public class Select implements IExecutor {
     public static Relation select(String[] commands, Interpreter inter)
             throws Exception {
 
-        // ---
-        new Select2().execute(commands, inter);
-        // ---
-
         String dbPath = inter.getDbPath(),
                 nomRelation = Funct.getNomRelation( commands, "AME" );
         new RelationVerifier(dbPath).verifyExisting( nomRelation );
@@ -46,13 +42,6 @@ public class Select implements IExecutor {
             System.out.println(pair.get(0) + ";" + pair.get(1));
             System.out.println("---");
         }
-
-//        // on regroupe tous les string dans des parentheses
-//        List<List<String>> strInParentheses = getStrInParentheses(splitQuery, indexesParentheses);
-//        for (List<String> sublist : strInParentheses) {
-//            for (String str : sublist) System.out.print(str + ";");
-//            System.out.println("\n---");
-//        }
 
         // RELATIONS <- JOIN
         List<String> joinIndicators = Arrays.asList("x", "X", ",", "teta[");

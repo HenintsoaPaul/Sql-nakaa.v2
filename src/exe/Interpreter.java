@@ -72,6 +72,7 @@ public class Interpreter {
         }
         catch (Exception e) {
 
+            System.out.println("Nisy erreur zoky be!");
             throw new RuntimeException(e);
         }
 

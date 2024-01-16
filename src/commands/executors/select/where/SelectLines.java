@@ -1,5 +1,6 @@
 package commands.executors.select.where;
 
+import commands.executors.select.Select2;
 import commands.executors.select.conditions.ConditionGetter;
 import composants.relations.Relation;
 
@@ -13,6 +14,7 @@ import static commands.executors.select.conditions.ConditionVerifier.verifyAllCo
 
 @SuppressWarnings({"rawTypes", "rawtypes"})
 public abstract class SelectLines {
+    static String whereKeyWord = "refa";
 
     /**
      * It returns all the rows of the specified relation rel. But only,
@@ -48,7 +50,12 @@ public abstract class SelectLines {
             throws Exception {
 
         List<String> cmd = Arrays.asList(commande);
-        int indexWhere = getIndexOfWhere(cmd);
+        return selectWhere(cmd, rel);
+    }
+    public static Relation selectWhere(List<String> cmd, Relation rel)
+            throws Exception {
+
+        int indexWhere = Select2.getIndexZeroLevelParentheses(cmd, whereKeyWord);
         if ( indexWhere != -1 ) {
             List<String> refa = cmd.subList(indexWhere+1, cmd.size());
             List<String[]> conditions = ConditionGetter.getConditions(refa);
@@ -56,18 +63,12 @@ public abstract class SelectLines {
             inverseAllTsyConditions(conditions);
             verifyAllConditions(conditions, rel);
 
-            String[] separatorsS = ConditionGetter.getConditionSeparator(commande);
+            String[] separatorsS = ConditionGetter.getConditionSeparator(cmd);
             List<String> separators = new ArrayList<>(List.of(separatorsS));
 
             rel = ConditionGetter.getRelation(conditions, separators, rel);
         }
 
         return rel;
-    }
-    static int getIndexOfWhere(List<String> cmd) {
-        String where = "refa";
-        return cmd.contains(where) ?
-                cmd.indexOf(where) :
-                cmd.indexOf(where.toUpperCase());
     }
 }

@@ -8,17 +8,16 @@ import tools.verifier.RelationVerifier;
 import java.util.List;
 
 public class ArgJoin {  // nomRelation || selectQuery
-    List<String> str;
-    RelationVerifier verifier;
-    RelationLoader loader;
+    final List<String> str;
+    final RelationVerifier verifier;
+    final RelationLoader loader;
 
-    public List<String> getCharacters() {
-        return str;
-    }
     public String[] getKtrs() {
-        String[] tab = new String[str.size()];
-        for (int i = 0; i < str.size(); i++) {
-            tab[i] = str.get(i);
+        // we do not take the first and the last parentheses
+        int len = str.size() - 2;
+        String[] tab = new String[len];
+        for (int i = 0; i < len; i++) {
+            tab[i] = str.get(i + 1);
         }
         return tab;
     }
@@ -38,9 +37,10 @@ public class ArgJoin {  // nomRelation || selectQuery
             verifier.verifyExisting(relationName);
             rel = loader.loadRelation(relationName);
         }
-        else if (str.get(0).equalsIgnoreCase("aboay")) {
+        else if (str.get(1).equalsIgnoreCase("aboay")) {
             String[] commands = getKtrs();
             rel = new Select2().select(commands, interpreter);
+            Limit.handleLimit(rel, commands);
         }
         return rel;
     }

@@ -36,15 +36,9 @@ public class Select implements IExecutor {
 
         String dbPath = inter.getDbPath(),
                 nomRelation = Funct.getNomRelation( commands, "AME" );
-
         new RelationVerifier(dbPath).verifyExisting( nomRelation );
-
         Relation rel = RelationLoader.loadRelation( nomRelation, dbPath );
-
         List<String> splitQuery = Arrays.asList(commands);
-
-        // verification des parentheses
-        verifyParentheses(splitQuery);
 
         // on prend les indices des parentheses
         List<List<Integer>> indexesParentheses = getIndexesParentheses(splitQuery);
@@ -53,12 +47,12 @@ public class Select implements IExecutor {
             System.out.println("---");
         }
 
-        // on regroupe tous les string dans des parentheses
-        List<List<String>> strInParentheses = getStrInParentheses(splitQuery, indexesParentheses);
-        for (List<String> sublist : strInParentheses) {
-            for (String str : sublist) System.out.print(str + ";");
-            System.out.println("\n---");
-        }
+//        // on regroupe tous les string dans des parentheses
+//        List<List<String>> strInParentheses = getStrInParentheses(splitQuery, indexesParentheses);
+//        for (List<String> sublist : strInParentheses) {
+//            for (String str : sublist) System.out.print(str + ";");
+//            System.out.println("\n---");
+//        }
 
         // RELATIONS <- JOIN
         List<String> joinIndicators = Arrays.asList("x", "X", ",", "teta[");
@@ -78,24 +72,21 @@ public class Select implements IExecutor {
         String[] columnsName = SelectColumns.getColumnsName(commands);
         rel = Projection.project(columnsName, rel);
 
-        // LIMIT
-        Limit.handleLimit(splitQuery, rel);
-
         return rel;
     }
 
-    private static List<List<String>> getStrInParentheses(List<String> splitQuery, List<List<Integer>> indexesParentheses) {
-        List<List<String>> list = new ArrayList<>();
-        for (List<Integer> pair : indexesParentheses) {
-            List<String> sublist = new ArrayList<>();
-            int indexOuvert = pair.get(0);
-            for (int i = indexOuvert + 1; i < pair.get(1); i++) {
-                sublist.add(splitQuery.get(i));
-            }
-            list.add(sublist);
-        }
-        return list;
-    }
+//    private static List<List<String>> getStrInParentheses(List<String> splitQuery, List<List<Integer>> indexesParentheses) {
+//        List<List<String>> list = new ArrayList<>();
+//        for (List<Integer> pair : indexesParentheses) {
+//            List<String> sublist = new ArrayList<>();
+//            int indexOuvert = pair.get(0);
+//            for (int i = indexOuvert + 1; i < pair.get(1); i++) {
+//                sublist.add(splitQuery.get(i));
+//            }
+//            list.add(sublist);
+//        }
+//        return list;
+//    }
 
     private static List<List<Integer>> getIndexesParentheses(List<String> splitQuery) {
         List<List<Integer>> list = new ArrayList<>();
@@ -113,27 +104,5 @@ public class Select implements IExecutor {
             }
         }
         return list;
-    }
-
-    private static void verifyParentheses(List<String> splitQuery) {
-        int verify = 0;
-        for (String str : splitQuery) {
-            if (verify < 0) {
-                throw new RuntimeException("Misy parenthese(s) fermante(s) tsy manana ouvrante quelque part name!");
-            }
-
-            if (str.equals("(")) {
-                verify ++;
-            }
-            else if (str.equals(")")) {
-                verify --;
-            }
-        }
-        if (verify > 0) {
-            throw new RuntimeException("Misy parenthese(s) ouvrante(s) tsy mihidy quelque part nama!");
-        }
-        else if (verify < 0) {
-            throw new RuntimeException("Misy parenthese(s) fermante(s) tsy mihidy quelque part nama!");
-        }
     }
 }

@@ -15,7 +15,7 @@ public abstract class JoinHandler {
         // take the names of all relations, unless t1 because t1 == relationWhere
         List<String> relationsName = getRelationsName(splitQuery);
 
-        List<Relation> relations = verifyExistanceAndLoadRelations(relationsName, dbPath, relationWhere);
+        List<Relation> relations = verifyExistenceAndLoadRelations(relationsName, dbPath, relationWhere);
 
         renameIdenticalAttributs(relations);
 
@@ -48,7 +48,7 @@ public abstract class JoinHandler {
         return relationsName;
     }
 
-    private List<Relation> verifyExistanceAndLoadRelations(List<String> relationsName, String dbPath, Relation relationWhere) {
+    private List<Relation> verifyExistenceAndLoadRelations(List<String> relationsName, String dbPath, Relation relationWhere) {
         RelationVerifier verifier = new RelationVerifier(dbPath);
         RelationLoader loader = new RelationLoader(dbPath);
         List<Relation> relations = new ArrayList<>();
@@ -67,7 +67,7 @@ public abstract class JoinHandler {
         return relations;
     }
 
-    private void renameIdenticalAttributs(List<Relation> relations) {
+    public static void renameIdenticalAttributs(List<Relation> relations) {
         // look for attribs with the same names in each Relation, then rename those with similar names
         int numberOfRelations = relations.size();
         for (int i = 0; i < numberOfRelations - 1; i++) {
@@ -109,9 +109,6 @@ public abstract class JoinHandler {
         }
     }
 
-
-
-
-    public abstract Relation joinTwoRelations(Relation relation1, Relation relation2)
+    public abstract Relation joinTwoRelations(Relation relation1, Relation relation2, String tetaCondition)
             throws Exception;
 }

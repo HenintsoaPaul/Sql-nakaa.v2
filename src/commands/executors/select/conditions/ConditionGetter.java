@@ -6,6 +6,7 @@ import composants.relations.Relation;
 import composants.relations.RelationOperator;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 @SuppressWarnings("rawtypes")
 public abstract class ConditionGetter {
@@ -48,23 +49,20 @@ public abstract class ConditionGetter {
     public static String[] getConditionSeparator(String[] commands) {
 
         List<String> cmd = Arrays.asList(commands);
+        return getConditionSeparator(cmd);
+    }
+    public static String[] getConditionSeparator(List<String> cmd) {
+
         int startIndex = cmd.contains("refa") ?
-                cmd.indexOf("refa") :
-                cmd.indexOf("REFA");
-//        System.out.println("index refa:"+startIndex);
+                cmd.indexOf("refa") : cmd.indexOf("REFA");
 
         List<String> separators = Arrays.asList("ary", "na");
-        return Arrays.stream(commands)
-                .skip(startIndex+1)
-                .filter(command ->
-                        separators.contains(command)
-                        || separators.contains(command.toLowerCase()))
-                .toArray(String[]::new);
+        Predicate<String> isSeparator = command -> separators.contains(command) || separators.contains(command.toLowerCase());
+
+        return cmd.subList(startIndex + 1, cmd.size()).stream().filter(isSeparator).toArray(String[]::new);
     }
 
-    public static Relation getRelation(List<String[]> conditions,
-                                       List<String> separators,
-                                       Relation relation)
+    public static Relation getRelation(List<String[]> conditions, List<String> separators, Relation relation)
             throws Exception {
         // transform each condition to a Relation
         List<Relation> relationsFromConditions = new ArrayList<>();
@@ -96,9 +94,7 @@ public abstract class ConditionGetter {
         }
         return relationsFromConditions.get(0);
     }
-    static void processSeparator(List<String> separators, String sep,
-                                 List<Relation> relationsFromConditions,
-                                 Iterator<String> sepIterator)
+    static void processSeparator(List<String> separators, String sep, List<Relation> relationsFromConditions, Iterator<String> sepIterator)
             throws Exception {
 
         int indexSep = separators.contains(sep) ?

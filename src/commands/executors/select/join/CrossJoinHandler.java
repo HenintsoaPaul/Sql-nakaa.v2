@@ -26,7 +26,7 @@ public class CrossJoinHandler extends JoinHandler {
     }
 
     @Override
-    public Relation joinTwoRelations(Relation relation1, Relation relation2)
+    public Relation joinTwoRelations(Relation relation1, Relation relation2, String tetaCondition)
             throws Exception {
         List<Relation> relations = Arrays.asList(relation1, relation2);
         return processCrossJoin(relations);
@@ -36,7 +36,8 @@ public class CrossJoinHandler extends JoinHandler {
             throws Exception {
         Relation rel = relations.get(0);
         for (int i = 1; i < relations.size(); i++) {
-            rel = crossJoin( rel, relations.get(i));
+            Relation rel2 = relations.get(i);
+            rel = crossJoin( rel, rel2);
         }
         return rel;
     }

@@ -5,8 +5,7 @@ import exe.Interpreter;
 
 public class Help implements IExecutor {
     @Override
-    public void execute(String[] commands, Interpreter interpreter)
-            throws Exception {
+    public void execute(String[] commands, Interpreter interpreter) {
         showHelpMenu();
     }
 

@@ -37,6 +37,7 @@ public class DescribeTable implements IExecutor {
         return rel;
     }
 
+    @SuppressWarnings("unchecked")
     Vector<Vector> getDonnees(Relation rel) {
         Vector<Vector> result = new Vector<>();
         for ( Attribut atb: rel.getAttributs() ) {

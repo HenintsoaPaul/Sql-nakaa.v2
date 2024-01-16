@@ -2,8 +2,6 @@ package commands.executors.select.join;
 
 import composants.relations.Attribut;
 import composants.relations.Relation;
-import tools.loaders.RelationLoader;
-import tools.verifier.RelationVerifier;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,61 +9,9 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class JoinHandler {
-    public Relation join(List<String> splitQuery, String dbPath, Relation relationWhere) {
-        // take the names of all relations, unless t1 because t1 == relationWhere
-        List<String> relationsName = getRelationsName(splitQuery);
 
-        List<Relation> relations = verifyExistenceAndLoadRelations(relationsName, dbPath, relationWhere);
-
-        renameIdenticalAttributs(relations);
-
-        try {
-            return handle(relations, splitQuery);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public abstract Relation handle(List<Relation> relations, List<String> splitQuery)
-            throws Exception;
-
-    abstract List<String> getRelationsName(List<String> splitQuery);
-    List<String> getRelationsNames(List<String> splitQuery, String joinIdentifier) {
-        // on suppose joinIdentifier --> lowerCase
-
-        List<String> relationsName = new ArrayList<>();
-        int ind = splitQuery.contains(joinIdentifier) ?
-                splitQuery.indexOf(joinIdentifier) :
-                splitQuery.indexOf(joinIdentifier.toUpperCase());
-
-        for (int i = ind; i < splitQuery.size(); i++) {
-            String str = splitQuery.get(i);
-            if (str.equalsIgnoreCase(joinIdentifier)) {
-                relationsName.add(splitQuery.get(i+1));
-            }
-        }
-
-        return relationsName;
-    }
-
-    private List<Relation> verifyExistenceAndLoadRelations(List<String> relationsName, String dbPath, Relation relationWhere) {
-        RelationVerifier verifier = new RelationVerifier(dbPath);
-        RelationLoader loader = new RelationLoader(dbPath);
-        List<Relation> relations = new ArrayList<>();
-
-        relations.add(relationWhere);
-        relationsName.forEach(name -> {
-            try {
-                verifier.verifyExisting(name);
-                Relation rel = loader.loadRelation(name);
-                relations.add(rel);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        });
-
-        return relations;
-    }
+    public abstract Relation joinRelations(Relation relation1, Relation relation2, String tetaCondition)
+    throws Exception;
 
     public static void renameIdenticalAttributs(List<Relation> relations) {
         // look for attribs with the same names in each Relation, then rename those with similar names
@@ -108,7 +54,4 @@ public abstract class JoinHandler {
             });
         }
     }
-
-    public abstract Relation joinTwoRelations(Relation relation1, Relation relation2, String tetaCondition)
-            throws Exception;
 }

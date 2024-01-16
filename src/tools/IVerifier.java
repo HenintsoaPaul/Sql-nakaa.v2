@@ -1,5 +1,6 @@
 package tools;
 
+@SuppressWarnings("unused")
 public interface IVerifier {
 
     boolean isExisting(String relationalModelName);

@@ -51,7 +51,7 @@ public abstract class RelationOperator {
     public static Relation union( Relation rel1, Relation rel2 ) throws Exception {
         Relation result = initRelation( rel1, rel2, "union" );
 
-        // ajout des tout les lignes de deux relations
+        // ajout des toutes les lignes de deux relations
         Vector<Vector> li = new Vector( rel1.getLignes() );
         li.addAll(rel2.getLignes());
         result.setLignes( li );
@@ -81,7 +81,8 @@ public abstract class RelationOperator {
 
 
     //  3*) DIFFERENCE
-    public static Relation difference( Relation rel1, Relation rel2 ) throws Exception {
+    @SuppressWarnings("unused")
+    public static Relation difference(Relation rel1, Relation rel2 ) throws Exception {
         Relation result = initRelation( rel1, rel2, "difference" );
 
         result.setLignes( getLignesDifferentes( rel1.getLignes(), rel2.getLignes() ) );

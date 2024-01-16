@@ -2,6 +2,7 @@ package tools.verifier;
 
 import tools.IVerifier;
 
+@SuppressWarnings("unused")
 public class SequenceVerifier implements IVerifier {
 
     @Override

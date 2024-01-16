@@ -2,13 +2,13 @@ Sql-nakaa : SGBD perso
 
 # A propos:
 * chaque commande doit se terminer par un point virgule ";".
-(pas encore operationnel-actuellement les commandes se terminent par la touche ENTREE)
+(pas encore operational - actuellement les commandes se terminent par la touche ENTREE)
 * les commandes suivantes sont "Case Sensitive".
     → dans le futur les commandes ne devront plus etre case sensitive.
 * les parantheses doivent toujours etre separees des mots par un espace
 * les commandes sont en langue "Malagasy" dialecte "Antesaka".
 
-# Commandes:
+# Commandes :
 * ## MAMOROOGNA ~ CREATE:
         MAMOROOGNA TABLE t1 ( etu int, nom String )
 

@@ -10,8 +10,6 @@ public class DropRelation extends Drop{
 
     public DropRelation() {}
 
-
-
     public void drop(String[] commands, Interpreter interpreter) {
 
         String nomRelation = commands[2];

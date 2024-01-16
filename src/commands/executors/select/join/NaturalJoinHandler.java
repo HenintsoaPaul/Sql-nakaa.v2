@@ -7,27 +7,9 @@ import java.util.*;
 
 @SuppressWarnings("rawtypes")
 public class NaturalJoinHandler extends JoinHandler {
-    @Override
-    public Relation handle(List<Relation> relations, List<String> splitQuery)
-            throws Exception {
-        /*
-         query be like:
-            aboay aby ame t1 , t2 , t3 , ...
-         splitQuery be like:
-            [aboay, aby, ame, t1, ,, t2, ,, t3, ...]
-         */
-
-        Relation relCrossJoined = new CrossJoinHandler().processCrossJoin(relations);
-        return processNaturalJoin(relCrossJoined);
-    }
 
     @Override
-    List<String> getRelationsName(List<String> splitQuery) {
-        return getRelationsNames(splitQuery, ",");
-    }
-
-    @Override
-    public Relation joinTwoRelations(Relation relation1, Relation relation2, String tetaCondition)
+    public Relation joinRelations(Relation relation1, Relation relation2, String tetaCondition)
             throws Exception {
         List<Relation> relations = Arrays.asList(relation1, relation2);
         Relation relXJoined = new CrossJoinHandler().processCrossJoin(relations);

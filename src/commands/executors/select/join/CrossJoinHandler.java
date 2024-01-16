@@ -8,25 +8,9 @@ import java.util.Vector;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class CrossJoinHandler extends JoinHandler {
-    @Override
-    public Relation handle(List<Relation> relations, List<String> splitQuery)
-            throws Exception {
-        /*
-         query be like:
-            aboay aby ame t1 x t2 x t3 x ...
-         splitQuery be like:
-            [aboay, aby, ame, t1, x, t2, x, t3, ...]
-         */
-
-        return processCrossJoin(relations);
-    }
-
-     List<String> getRelationsName(List<String> splitQuery) {
-        return getRelationsNames(splitQuery, "x");
-    }
 
     @Override
-    public Relation joinTwoRelations(Relation relation1, Relation relation2, String tetaCondition)
+    public Relation joinRelations(Relation relation1, Relation relation2, String tetaCondition)
             throws Exception {
         List<Relation> relations = Arrays.asList(relation1, relation2);
         return processCrossJoin(relations);

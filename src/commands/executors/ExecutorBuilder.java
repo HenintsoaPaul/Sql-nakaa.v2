@@ -1,9 +1,9 @@
 package commands.executors;
 
 import commands.IExecutor;
-import commands.executors.create.Create;
+import commands.executors.create.CreateFactory;
 import commands.executors.divEuclidienne.DivEuclidienne;
-import commands.executors.drop.Drop;
+import commands.executors.drop.DropFactory;
 import commands.executors.insert.Insert;
 import commands.executors.select.Projection;
 import commands.executors.select.Select2;
@@ -18,8 +18,8 @@ public abstract class ExecutorBuilder {
     static final HashMap<String, IExecutor> executors = new HashMap<>();
 
     static {
-        executors.put("MAMOROOGNA", new Create());
-        executors.put("FAFAY", new Drop());
+        executors.put("MAMOROOGNA", new CreateFactory());
+        executors.put("FAFAY", new DropFactory());
         executors.put("APIDIRO", new Insert());
         executors.put("ABOAY", new Select2());
         executors.put("PROJETEO", new Projection());

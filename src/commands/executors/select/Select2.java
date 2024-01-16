@@ -32,7 +32,7 @@ public class Select2 implements IExecutor {
         verifyParentheses(splitQuery);
 
         List<ArgJoin> argJoins = getArgJoins(joinPart, interpreter.getDbPath());
-        List<Relation> relations = getRelations(argJoins, interpreter);
+        List<Relation> relations = getRelationsFromArgJoins(argJoins, interpreter);
 
         JoinHandler.renameIdenticalAttributs(relations);
 
@@ -61,10 +61,10 @@ public class Select2 implements IExecutor {
             throws Exception {
         String joinIdentifierBegin = joinIndicator.split(" ")[0];
         JoinHandler joinHandler = JoinHandlerFactory.build(joinIdentifierBegin);
-        return joinHandler.joinTwoRelations(relation1, relation2, joinIndicator);
+        return joinHandler.joinRelations(relation1, relation2, joinIndicator);
     }
 
-    private List<Relation> getRelations(List<ArgJoin> argJoins, Interpreter interpreter)
+    private List<Relation> getRelationsFromArgJoins(List<ArgJoin> argJoins, Interpreter interpreter)
             throws Exception {
         List<Relation> relations = new ArrayList<>();
         for (ArgJoin argJoin : argJoins) {
@@ -162,8 +162,7 @@ public class Select2 implements IExecutor {
             }
         }
 
-         int indexEnd = indexEndJoinPart == -1 ?
-                lenSplitQuery : indexEndJoinPart;
+         int indexEnd = indexEndJoinPart == -1 ? lenSplitQuery : indexEndJoinPart;
         return splitQuery.subList(indexFrom + 1, indexEnd);
     }
 

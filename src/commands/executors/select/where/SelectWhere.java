@@ -14,6 +14,13 @@ import java.util.Vector;
 @SuppressWarnings("rawtypes")
 public abstract class SelectWhere {
 
+    public static Relation getRelationAFromCondition(Relation relation, String[] condition)
+            throws Exception {
+        Relation rel = relation.clone();
+        Vector<Vector> rows = getLignesWhere(relation, condition);
+        rel.setLignes(rows);
+        return rel;
+    }
     /**
      * It returns the lines respecting the specified condition
      * from all the original lines of the relation 'rel' given
@@ -33,6 +40,12 @@ public abstract class SelectWhere {
 
         return result;
     }
+
+    /**
+     * Used when processing tetaJoin on two relations.
+     * @param rel the xJoined relation from the two relations.
+     * @param predicat colA [operator] colB
+     */
     public static Vector<Vector> getLignesWhere (Relation rel, Predicat predicat)
             throws Exception {
 

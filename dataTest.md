@@ -8,6 +8,7 @@ DATA TEST
   *          MAMOROOGNA TABLE biblio ( numero int, debutEmprunt date )
   *          MAMOROOGNA TABLE etudiants ( etu int, nom String, isCool boolean )
   *          MAMOROOGNA TABLE test4 ( etu String )
+    MAMOROOGNA TABLE banque ( idClient int, nom String, vola double, age int )
 
       * * DROP:
       *          FAFAY TABLE test
@@ -18,18 +19,29 @@ DATA TEST
       *          FAFAY TABLE etudiants
       * 
       * * INSERT:
-      *      - vers test:
-      *          APIDIRO ( etu, vola ) AGNATY test VALUES ( Jean, 150 )
-      *          APIDIRO ( etu, vola ) AGNATY test VALUES ( Atlas, 32 )
-      *          APIDIRO ( etu, vola ) AGNATY test VALUES ( Sharon, 45 )
-      *          APIDIRO ( etu, vola ) AGNATY test VALUES ( Kabisa, 12 )
-      *          APIDIRO ( vola ) AGNATY test VALUES ( 12 )
-      *          APIDIRO ( etu ) AGNATY test VALUES ( 226 )
-      *     - vers biblio:
-      *          APIDIRO ( numero, debutEmprunt ) AGNATY biblio VALUES ( 2, 12-05-2015 )
-      *          APIDIRO ( numero, debutEmprunt ) AGNATY biblio VALUES ( 1, 20-03-2015 )
+  - vers test:
+    APIDIRO ( etu, vola ) AGNATY test VALUES ( Jean, 150 )
+    APIDIRO ( etu, vola ) AGNATY test VALUES ( Atlas, 32 )
+    APIDIRO ( etu, vola ) AGNATY test VALUES ( Sharon, 45 )
+    APIDIRO ( etu, vola ) AGNATY test VALUES ( Tsoa, 450 )
+    APIDIRO ( etu, vola ) AGNATY test VALUES ( Kabisa, 12 )
+    APIDIRO ( vola ) AGNATY test VALUES ( 12 )
+    APIDIRO ( etu ) AGNATY test VALUES ( 226 )
+
+  - vers biblio:
+  APIDIRO ( numero, debutEmprunt ) AGNATY biblio VALUES ( 2, 12-05-2015 )
+  APIDIRO ( numero, debutEmprunt ) AGNATY biblio VALUES ( 1, 20-03-2015 )
+
   - vers test4 :
   APIDIRO ( etu ) AGNATY test4 VALUES ( Atlas )
   APIDIRO ( etu ) AGNATY test4 VALUES ( Georges )
   APIDIRO ( etu ) AGNATY test4 VALUES ( Ckay )
   APIDIRO ( etu ) AGNATY test4 VALUES ( Jean )
+
+  - vers banque :
+  APIDIRO ( idClient, nom, vola, age ) AGNATY banque VALUES ( 1, Atlas, 250, 19 )
+  APIDIRO ( idClient, nom, vola, age ) AGNATY banque VALUES ( 2, Tsoa, 150, 19 )
+  APIDIRO ( idClient, nom, vola, age ) AGNATY banque VALUES ( 3, Hawks, 450, 24 )
+
+* teta join:
+  aboay aby ame test teta[ colA == colB ] test2 x test4

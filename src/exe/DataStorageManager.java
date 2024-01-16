@@ -22,6 +22,7 @@ public class DataStorageManager {
         return storagePath;
     }
 
+    @SuppressWarnings("unused")
     private void setStoragePath(String storagePath) throws Exception {
         if ( storagePath == null )
             throw new Exception("Tsy azo atao NULL ny storagePath anle Base nama!");

@@ -19,6 +19,18 @@ public class Relation implements Serializable, RelationalModel {
     Attribut[] attributs;
     Vector<Vector> lignes = new Vector<>();
 
+    public Relation clone() {
+        Attribut[] attributs = this.getAttributs();
+        Vector<Vector> rows = this.getLignes();
+        Relation rel = null;
+        try {
+            rel = new Relation(attributs);
+            rel.setLignes(rows);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return rel;
+    }
 
     // Constructors
     public Relation(Attribut[] attributs) throws Exception {

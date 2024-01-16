@@ -7,8 +7,7 @@ public class EqualVerifier implements INumericalConditionVerifier {
     public EqualVerifier() {}
 
     @Override
-    public boolean isTrue(Object value, Object valueVerifier) {
-
-        return valueVerifier.equals(value);
+    public boolean verify(double value1, double value2) {
+        return value1 == value2;
     }
 }

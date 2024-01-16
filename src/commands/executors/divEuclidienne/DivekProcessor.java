@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class DivekProcessor {
 
     public DivekProcessor() {}
@@ -30,7 +31,7 @@ public class DivekProcessor {
         Vector<Vector> lignesDuDiviseur = diviseur.getLignes();
         for (Vector ligneDiviseur: lignesDuDiviseur) {
 
-            // creer des relations a partir des ligneDiviseur matching dans les lignesDividende
+            // creer des relations à partir des ligneDiviseur matching dans les lignesDividende
             Vector<Vector> lignesDuQuotient = new Vector<>();
             Vector<Vector> lignesDuDividende = dividende.getLignes();
             for (Vector ligneDividende: lignesDuDividende) {
@@ -81,7 +82,6 @@ public class DivekProcessor {
 
     private Attribut[] getAttributsQuotient(Attribut[] attributsDividende, Attribut[] attributsDiviseur) {
         List<Attribut> atbDividende = Arrays.asList(attributsDividende),
-                atbDiviseur = Arrays.asList(attributsDiviseur),
                 atbQuotient = new ArrayList<>();
 
         List<String> nomAtbDiviseur = new ArrayList<>();

@@ -10,17 +10,13 @@ public class CreateRelation extends Create {
 
     public CreateRelation() {}
 
-
-
-    public void create(String[] commands, Interpreter interpreter)
+    public void createRelationalModel(String[] commands, Interpreter interpreter)
             throws Exception {
 
         Relation rel = createRelation(commands, interpreter);
         if ( rel != null )
             new RelationSaver().save( rel, interpreter );
     }
-
-
 
     Relation createRelation(String[] commands, Interpreter inter)
             throws Exception {
@@ -55,8 +51,6 @@ public class CreateRelation extends Create {
         }
         return attribs;
     }
-
-
 
     // Verifications
     static void isRelationAlreadyExisting( String nomRelation, Interpreter inter )

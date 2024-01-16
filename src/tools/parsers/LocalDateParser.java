@@ -9,6 +9,6 @@ public class LocalDateParser implements IValueParser {
 
         String format = "dd-MM-yyyy";
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
-        return LocalDate.parse((String)value, formatter);
+        return LocalDate.parse(value, formatter);
     }
 }

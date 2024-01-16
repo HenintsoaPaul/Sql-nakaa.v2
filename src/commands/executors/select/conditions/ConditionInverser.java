@@ -22,6 +22,8 @@ public abstract class ConditionInverser {
         return result;
     }
 
+    // todo: how to use "NOT conditions"
+    @SuppressWarnings("unused")
     public static void inverseAllTsyConditions(List<String[]> conditions) {
         for ( int i = 0; i < conditions.size(); i++ ) {
             String[] cond = conditions.get(i);

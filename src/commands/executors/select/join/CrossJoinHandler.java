@@ -2,45 +2,26 @@ package commands.executors.select.join;
 
 import composants.relations.Relation;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
-@SuppressWarnings("rawtypes")
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class CrossJoinHandler extends JoinHandler {
+
     @Override
-    public Relation handle(List<Relation> relations)
+    public Relation joinRelations(Relation relation1, Relation relation2, String tetaCondition)
             throws Exception {
-        /*
-         query be like:
-            aboay aby ame t1 x t2 x t3 x ...
-         splitQuery be like:
-            [aboay, aby, ame, t1, x, t2, x, t3, ...]
-         */
-
+        List<Relation> relations = Arrays.asList(relation1, relation2);
         return processCrossJoin(relations);
-    }
-
-     List<String> getRelationsName(List<String> splitQuery) {
-        List<String> relationsName = new ArrayList<>();
-        int ind = splitQuery.contains("x") ?
-                splitQuery.indexOf("x") : splitQuery.indexOf("X");
-
-        for (int i = ind; i < splitQuery.size(); i++) {
-            String str = splitQuery.get(i);
-            if (str.equalsIgnoreCase("x")) {
-                relationsName.add(splitQuery.get(i+1));
-            }
-        }
-
-        return relationsName;
     }
 
     public Relation processCrossJoin(List<Relation> relations)
             throws Exception {
         Relation rel = relations.get(0);
         for (int i = 1; i < relations.size(); i++) {
-            rel = crossJoin( rel, relations.get(i));
+            Relation rel2 = relations.get(i);
+            rel = crossJoin( rel, rel2);
         }
         return rel;
     }

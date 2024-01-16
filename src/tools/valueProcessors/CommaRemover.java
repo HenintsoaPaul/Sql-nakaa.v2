@@ -8,7 +8,6 @@ public class CommaRemover implements IValueProcessor {
 
     @Override
     public String process(String value) {
-
         return value.replace(",", "");
     }
 }

@@ -7,24 +7,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Probleme de cross join de table avec column de meme nom resolu.">
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/DivEuclid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/divEuclidProcessor.java" afterDir="false" />
+    <list default="true" id="a4077462-da56-417e-9ad9-93250987cc23" name="Changes" comment="Les query naturalJoin et tetaJoin imbriques fonctionnent. Plus ajout des fonctionnalites desc, show tables et help.">
+      <change afterPath="$PROJECT_DIR$/src/commands/executors/select/ArgWhere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataTest.md" beforeDir="false" afterPath="$PROJECT_DIR$/dataTest.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/ExecutorBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/create/Create.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/create/Create.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/create/CreateRelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/create/CreateRelation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateBaseBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/create/CreateFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateRelationBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/create/createFactory/CreateSequenceBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/create/createFactory/ICreateBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/DivekProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/divEuclidienne/DivekProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/drop/Drop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/DropRelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/drop/DropRelation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropBaseBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/drop/DropFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropRelationBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/DropSequenceBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/drop/dropFactory/IDropBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/Select2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/Select2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionInverser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionInverser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/conditions/ConditionVerifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/CrossJoinStrategy.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/JoinHandlerFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NaturalJoinHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/NoJoinHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/join/TetaJoinHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/where/SelectLines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/where/SelectLines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/select/where/SelectWhere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/select/where/SelectWhere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/system/DescribeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/system/DescribeTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/executors/system/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/executors/system/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composants/Predicat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/Predicat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/composants/relations/Relation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/Relation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/loaders/RelationLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/RelationVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composants/relations/RelationOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/composants/relations/RelationOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exe/DataStorageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exe/DataStorageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/Funct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Funct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/IValueProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/IValueProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/IVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/IVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/valueProcessors/CommaRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/valueProcessors/CommaRemover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/verifier/SequenceVerifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/verifier/SequenceVerifier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +75,13 @@
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
       </GitPushTagMode>
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="naturalJoin" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,13 +104,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;naturalJoin&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gestionParantheses&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -92,7 +119,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/home/tsoa/Documents/semestre_3/Mr Tsinjo/Sql-nakaa/Sql-nakaa/src/Main.java&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
     &quot;settings.editor.splitter.proportion&quot;: &quot;0.20031923&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -117,6 +144,13 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-a9dfd5e7" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -156,7 +190,18 @@
       <workItem from="1704711282653" duration="4790000" />
       <workItem from="1704718807753" duration="5600000" />
       <workItem from="1704731105966" duration="608000" />
-      <workItem from="1704973989139" duration="5561000" />
+      <workItem from="1704973989139" duration="8239000" />
+      <workItem from="1704996370993" duration="498000" />
+      <workItem from="1704999828546" duration="2978000" />
+      <workItem from="1705041280788" duration="6083000" />
+      <workItem from="1705058984674" duration="7643000" />
+      <workItem from="1705164821978" duration="674000" />
+      <workItem from="1705166308627" duration="493000" />
+      <workItem from="1705167534232" duration="13770000" />
+      <workItem from="1705314658986" duration="9829000" />
+      <workItem from="1705379755581" duration="11936000" />
+      <workItem from="1705408016281" duration="3639000" />
+      <workItem from="1705427058699" duration="6883000" />
     </task>
     <task id="LOCAL-00001" summary="create and drop Relation.java sont operationnels. Et les commandes ne sont plus case sensitive pour ces requetes.">
       <option name="closed" value="true" />
@@ -254,7 +299,71 @@
       <option name="project" value="LOCAL" />
       <updated>1704272086562</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Division euclidienne operationnel">
+      <option name="closed" value="true" />
+      <created>1704979868226</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1704979868227</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refactorisation du code.">
+      <option name="closed" value="true" />
+      <created>1705042097086</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705042097086</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Limit operationnel sur un query simple.">
+      <option name="closed" value="true" />
+      <created>1705170176740</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1705170176740</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Limit operationnel sur un query simple.">
+      <option name="closed" value="true" />
+      <created>1705170278522</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1705170278522</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Localisation des indices de toutes les parentheses dans un query.">
+      <option name="closed" value="true" />
+      <created>1705173828397</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1705173828397</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Reste a implementer le nouveau tetaJoin.">
+      <option name="closed" value="true" />
+      <created>1705320809479</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1705320809479</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Les query xJoin imbriques fonctionnent.">
+      <option name="closed" value="true" />
+      <created>1705389644050</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1705389644050</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Les query naturalJoin et tetaJoin imbriques fonctionnent. Plus ajout des fonctionnalites desc, show tables et help.">
+      <option name="closed" value="true" />
+      <created>1705391674793</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1705391674793</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +382,29 @@
     <MESSAGE value="Pendant le test crossJoin, l'affichage est erronee si on fait la jointure de table avec de meme nom de certains colonnes. En essayant de resoudre cela, creation de la table biblio, mais une erreur survient lors d'une insert de donnee de type date dans cette derniere." />
     <MESSAGE value="Insert de date operationnel. Mais le probleme d'affichage de table joinned pas encore." />
     <MESSAGE value="Probleme de cross join de table avec column de meme nom resolu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Probleme de cross join de table avec column de meme nom resolu." />
+    <MESSAGE value="Division euclidienne operationnel" />
+    <MESSAGE value="Refactorisation du code." />
+    <MESSAGE value="Limit operationnel sur un query simple." />
+    <MESSAGE value="Localisation des indices de toutes les parentheses dans un query." />
+    <MESSAGE value="Reste a implementer le nouveau tetaJoin." />
+    <MESSAGE value="Les query xJoin imbriques fonctionnent." />
+    <MESSAGE value="Les query naturalJoin et tetaJoin imbriques fonctionnent. Plus ajout des fonctionnalites desc, show tables et help." />
+    <option name="LAST_COMMIT_MESSAGE" value="Les query naturalJoin et tetaJoin imbriques fonctionnent. Plus ajout des fonctionnalites desc, show tables et help." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/commands/executors/select/where/SelectLines.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

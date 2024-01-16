@@ -10,7 +10,7 @@ import tools.verifier.RelationVerifier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DivEuclid implements IExecutor {
+public class DivEuclidienne implements IExecutor {
     @Override
     public void execute(String[] commands, Interpreter interpreter)
             throws Exception {

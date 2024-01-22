@@ -25,7 +25,8 @@ public abstract class ConditionVerifier {
         }
 
         if (!rel.isNumericAttrib(nomAttrib)) {
-            throw new Exception("L'opération " + operator + " est impossible a realiser " +
+            if (!operator.equals("=="))
+                throw new Exception("L'opération " + operator + " est impossible a realiser " +
                     "sur l'attribut " + nomAttrib + " de la Relation '" + relationName + "'!");
         }
 
@@ -37,7 +38,8 @@ public abstract class ConditionVerifier {
                 Integer.parseInt( valueToVerify );
             }
             catch ( NumberFormatException nfee ) {
-                throw new Exception( "ERROR: Tokony ho nombre ny condition ampesaina "+
+                if (!operator.equals("=="))
+                    throw new Exception( "ERROR: Tokony ho nombre ny condition ampesaina "+
                         "rehefa mampiasa operateur numerique: column (cond_numerique) number" );
             }
         }

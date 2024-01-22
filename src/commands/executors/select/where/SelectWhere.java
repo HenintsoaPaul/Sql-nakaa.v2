@@ -73,20 +73,24 @@ public abstract class SelectWhere {
             throws Exception {
 
         String columnType = clazz.getSimpleName();
-
         INumericParser numericParser = NumericParserBuilder.build(columnType);
-        if (numericParser == null)
+        if (numericParser == null && !condition[1].equals("==")) {
             throw new Exception("Tsy attribut numeric io type \""+columnType
                     +"\" io nama! int na double gne mety.");
+        }
 
-        Object valueVerifier = numericParser.numericParse(condition[2]);
         Object valueFromRelation = clazz.cast( ligne.get(indexAttrib) );
+        try {
+            Object valueVerifier = numericParser.numericParse(condition[2]);
+            String operator = condition[1];
+            INumericalConditionVerifier conditionVerifier =
+                    NumericalConditionVerifierBuilder.build(operator);
 
-        String operator = condition[1];
-        INumericalConditionVerifier conditionVerifier =
-                NumericalConditionVerifierBuilder.build(operator);
-
-        return conditionVerifier.isTrue(valueFromRelation, valueVerifier);
+            return conditionVerifier.isTrue(valueFromRelation, valueVerifier);
+        }
+        catch (NullPointerException ee) {
+            return valueFromRelation.equals(condition[2]);
+        }
     }
     @SuppressWarnings("RedundantArrayCreation")
     static boolean isVerifyingRow(Vector ligne, String operator,

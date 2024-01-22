@@ -45,3 +45,26 @@ DATA TEST
 
 * teta join:
   aboay aby ame test teta[ colA == colB ] test2 x test4
+
+-- TEST PARENTHESES:
+
+-> query:
+aboay aby ame test
+aboay aby ame itu
+
+aboay aby ame itu refa ( ( age == 18 ) na ( age >= 50 ) )
+aboay aby ame itu refa ( ( ( nom == Atlas ) na ( nom == Jean ) ) ary ( age < 30 ) )
+
+aboay aby ame ( ( aboay aby ame test4 ) x itu ) , test
+aboay aby ame ( aboay aby ame itu refa ( age < 19 ) ) x ( aboay aby ame test refa ( vola == 150 ) )
+aboay aby ame ( aboay aby ame itu refa ( age < 19 ) ) x ( aboay aby ame test refa ( vola <= 150 ) ) refa vola == 150
+
+-> itu:
+APIDIRO ( nom, age ) AGNATY itu VALUES ( Atlas, 18 )
+APIDIRO ( nom, age ) AGNATY itu VALUES ( Jean, 35 )
+APIDIRO ( nom, age ) AGNATY itu VALUES ( Jeanne, 26 )
+APIDIRO ( nom, age ) AGNATY itu VALUES ( Malko, 51 )
+APIDIRO ( nom, age ) AGNATY itu VALUES ( Kevin, 19 )
+
+APIDIRO ( etu, age ) AGNATY test2 VALUES ( Jean, 19 )
+APIDIRO ( etu, age ) AGNATY test2 VALUES ( Atlas, 19 )
